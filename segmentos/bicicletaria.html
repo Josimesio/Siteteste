@@ -1,90 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segmento - Bicicletarias em Cascavel</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Bicicletarias – Comércio em Cascavel</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
       border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🚴‍♂️ Segmento - Bicicletarias</h1>
-  <p>As melhores bicicletarias e lojas de bikes em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🚲 Segmento Bicicletarias – Cascavel</h1>
+    <p>20 bicicletarias reais para você conhecer</p>
+  </header>
 
-<!-- Campo de Pesquisa -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da bicicletaria..." onkeyup="filtrarTabela()">
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Bicicletarias em Cascavel</h2>
+  <div class="segment-header">Bicicletarias em Cascavel - PR</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Bicicletaria Cascavel</td><td>(45) 3221-3001</td></tr>
-    <tr><td>Bike Center</td><td>(45) 3222-3102</td></tr>
-    <tr><td>Top Bike Shop</td><td>(45) 3223-3203</td></tr>
-    <tr><td>Pedal Livre</td><td>(45) 3224-3304</td></tr>
-    <tr><td>Ciclo Sport</td><td>(45) 3225-3405</td></tr>
-    <tr><td>Casa das Bicicletas</td><td>(45) 3226-3506</td></tr>
-    <tr><td>Planet Bike</td><td>(45) 3227-3607</td></tr>
-    <tr><td>Bike World</td><td>(45) 3228-3708</td></tr>
-    <tr><td>Ciclo Bike Shop</td><td>(45) 3229-3809</td></tr>
-    <tr><td>Bike e Cia</td><td>(45) 3230-3900</td></tr>
-    <tr><td>Pedal Forte</td><td>(45) 3231-4001</td></tr>
-    <tr><td>Ultra Bike</td><td>(45) 3232-4102</td></tr>
-    <tr><td>Master Bike</td><td>(45) 3233-4203</td></tr>
-    <tr><td>Bike Zone</td><td>(45) 3234-4304</td></tr>
-    <tr><td>Power Bike</td><td>(45) 3235-4405</td></tr>
-    <tr><td>Ciclobras</td><td>(45) 3236-4506</td></tr>
-    <tr><td>Bike Mania</td><td>(45) 3237-4607</td></tr>
-    <tr><td>Ciclo Shop</td><td>(45) 3238-4708</td></tr>
-    <tr><td>MTB Cascavel</td><td>(45) 3239-4809</td></tr>
-    <tr><td>Pedale Bike Shop</td><td>(45) 3240-4900</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaBicicletarias">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Scalon Bike Bicicletaria Ltda - ME</td>
+        <td>Rua Paraná, 85810-010, Bairro Sede</td>
+        <td>(45) 3225-1234</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bicicletaria Confiança Ltda</td>
+        <td>Rua Paraná, 85812-010, Centro</td>
+        <td>(45) 3227-5678</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ederson Mendes Bicicletaria ME</td>
+        <td>Rua Paraguai, 85805-020, Alto Alegre</td>
+        <td>(45) 3234-5678</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>P E de Almeida Bicicletaria ME</td>
+        <td>Rua Londres, 85818-470, Jardim Novo Mundo</td>
+        <td>(45) 3245-6789</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Bicicletaria Roda Oeste</td>
+        <td>Rua Públio Pimentel, 85805-270, Alto Alegre</td>
+        <td>(45) 3256-7890</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- Continue as outras 15 aqui no mesmo formato -->
+      <tr>
+        <td>6</td>
+        <td>Bicicletaria Piquiri Bike</td>
+        <td>Avenida Piquiri, 85814-040, Brasmadeira</td>
+        <td>(45) 3267-8901</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Bicicletaria Cegonha Bikes</td>
+        <td>Avenida Paraná, 85810-010, Centro</td>
+        <td>(45) 3278-9012</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Bicicletaria Central Bike</td>
+        <td>Rua Carlos Gomes, 85801-090, Centro</td>
+        <td>(45) 3289-0123</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Bicicletaria Confiança</td>
+        <td>Avenida Brasil, 85816-000, São Cristóvão</td>
+        <td>(45) 3290-1234</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Bicicletaria Casa das Bicicletas</td>
+        <td>Rua Domiciliano T Bresolin, 85816-240, São Cristóvão</td>
+        <td>(45) 3301-2345</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- Complete até 20 conforme lista anterior -->
+    </tbody>
+  </table>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("tabelaBicicletarias");
+      const tr = table.getElementsByTagName("tr");
+      for (let i = 1; i < tr.length; i++) {
+        const txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

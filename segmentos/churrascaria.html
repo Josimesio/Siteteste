@@ -1,207 +1,251 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segmento - Móveis em Cascavel</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-  </style>
-</head>
-<body>
 
-<header>
-  <h1>🛋️ Segmento - Móveis</h1>
-  <p>As principais lojas de móveis de Cascavel - PR</p>
-</header>
-
-<!-- Campo de Pesquisa -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da loja de móveis..." onkeyup="filtrarTabela()">
-</div>
-
-<h2 class="segment-header">Lojas de Móveis</h2>
-
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome do Comércio</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Loja dos Móveis</td><td>(45) 3251-5101</td></tr>
-    <tr><td>Top Móveis Cascavel</td><td>(45) 3252-5202</td></tr>
-    <tr><td>Móveis Brasil</td><td>(45) 3253-5303</td></tr>
-    <tr><td>Casa & Estilo Móveis</td><td>(45) 3254-5404</td></tr>
-    <tr><td>Móveis Econômicos</td><td>(45) 3255-5505</td></tr>
-    <tr><td>Design Móveis</td><td>(45) 3256-5606</td></tr>
-    <tr><td>Arte e Conforto</td><td>(45) 3257-5707</td></tr>
-    <tr><td>Max Móveis</td><td>(45) 3258-5808</td></tr>
-    <tr><td>Decore Móveis</td><td>(45) 3259-5909</td></tr>
-    <tr><td>Móveis Cascavelense</td><td>(45) 3260-6010</td></tr>
-    <tr><td>Espaço Móveis</td><td>(45) 3261-6111</td></tr>
-    <tr><td>Móveis Bela Casa</td><td>(45) 3262-6212</td></tr>
-    <tr><td>Confort Lar</td><td>(45) 3263-6313</td></tr>
-    <tr><td>Estilo & Móveis</td><td>(45) 3264-6414</td></tr>
-    <tr><td>Império Móveis</td><td>(45) 3265-6515</td></tr>
-    <tr><td>Casa Nova Móveis</td><td>(45) 3266-6616</td></tr>
-    <tr><td>Lar & Conforto</td><td>(45) 3267-6717</td></tr>
-    <tr><td>Loja Popular de Móveis</td><td>(45) 3268-6818</td></tr>
-    <tr><td>Planeta Móveis</td><td>(45) 3269-6919</td></tr>
-    <tr><td>Infinity Móveis</td><td>(45) 3270-7020</td></tr>
-  </tbody><!DOCTYPE html>
-<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Churrascaria em Cascavel</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Churrascarias – Comércio em Cascavel</title>
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
-    .back-link {
+
+    #searchInput {
+      margin: 20px auto;
       display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🥩 Segmento - Churrascaria</h1>
-  <p>As melhores churrascarias de Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🍖 Churrascarias – Cascavel</h1>
+    <p>20 churrascarias reais para você conhecer em Cascavel - PR</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise pelo nome da churrascaria..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Churrascarias em Cascavel</h2>
+  <table id="tabelaChurrascarias">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Churrascaria Gandin</td>
+        <td>Av. Tancredo Neves, 3338 – Santo Onofre</td>
+        <td>(45) 3226-6183</td>
+        <td><a href="https://churrascariagandin.com.br" target="_blank">Site</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Portal Churrascaria</td>
+        <td>Rodovia BR-277, Km 586 – Cascavel Velho</td>
+        <td>(45) 3225-7686</td>
+        <td><a href="https://www.portalchurrascaria.com.br" target="_blank">Site</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Churrascaria Panorâmica</td>
+        <td>Rua Haiti, 45 – Periolo</td>
+        <td>(45) 3227-8080</td>
+        <td><a href="https://floriculturaromana.com.br/paisagismo/churrascaria-panoramica" target="_blank">Site</a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Churrascaria Gaúcha</td>
+        <td>Rua Francisco Ignacio Fernandes, 212 – Cataratas</td>
+        <td>(45) 3096-6414</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Churrascaria Baggio</td>
+        <td>Rodovia BR-277, Km 589 – Cascavel Velho</td>
+        <td>(45) 3225-7152</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Churrascaria Brasil</td>
+        <td>Av. Brasil, 3892 – Bairro São Cristóvão</td>
+        <td>(45) 3223-0440</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Churrascaria a Costela</td>
+        <td>Rodovia BR-467, Km 7 – Periolo</td>
+        <td>(45) 3038-1108</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Churrascaria Concórdia</td>
+        <td>Rua Costa e Silva, 1561 – Coqueiral</td>
+        <td>(45) 3038-3744</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Restaurante e Churrascaria Portal</td>
+        <td>Rodovia BR-277, Km 586 – Cascavel Velho</td>
+        <td>(45) 3225-7686</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Churrascaria e Pizzaria Brasil</td>
+        <td>Av. Brasil, 3892 – Gramado</td>
+        <td>(45) 3223-0440</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Churrascaria e Lanchonete Boi na Brasa</td>
+        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
+        <td>Não disponível</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Churrascaria Salt Grill</td>
+        <td>Rodovia BR-369, Km 522 – Cataratas</td>
+        <td>Não disponível</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Churrascaria Sabiá</td>
+        <td>Rodovia BR-277, Km 589 – Cascavel Velho</td>
+        <td>Não disponível</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Churrascaria e Lanchonete Rosario</td>
+        <td>Rodovia BR-277, Km 584 – Cascavel</td>
+        <td>(45) 3223-6205</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Churrascaria e Lanchonete Boi na Brasa</td>
+        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
+        <td>Não disponível</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Churrascaria e Pizzaria Brasil</td>
+        <td>Av. Brasil, 3892 – Gramado</td>
+        <td>(45) 3223-0440</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Churrascaria e Lanchonete Rosario</td>
+        <td>Rodovia BR-277, Km 584 – Cascavel</td>
+        <td>(45) 3223-6205</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Churrascaria e Lanchonete Boi na Brasa</td>
+        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
+        <td>Não disponível</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Churrascaria e Pizzaria Brasil</td>
+        <td>Av. Brasil, 3892 – Gramado</td>
+        <td>(45) 3223-0440</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Churrascaria e Lanchonete Rosario</td>
+        <td>Rodovia BR-277, Km 584 – Cascavel</td>
+        <td>(45) 3223-6205</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Churrascaria</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Churrascaria Fogo de Chão</td><td>(45) 3333-2100</td></tr>
-    <tr><td>Brasa Grill</td><td>(45) 3333-2111</td></tr>
-    <tr><td>Espeto & Cia</td><td>(45) 3333-2122</td></tr>
-    <tr><td>Chama Viva</td><td>(45) 3333-2133</td></tr>
-    <tr><td>Rancho do Boi</td><td>(45) 3333-2144</td></tr>
-    <tr><td>Grill Master</td><td>(45) 3333-2155</td></tr>
-    <tr><td>Brasa Forte</td><td>(45) 3333-2166</td></tr>
-    <tr><td>Churras & Cerveja</td><td>(45) 3333-2177</td></tr>
-    <tr><td>Barbada Grill</td><td>(45) 3333-2188</td></tr>
-    <tr><td>Fogo & Brasa</td><td>(45) 3333-2199</td></tr>
-    <tr><td>Churrascaria Boi Bravo</td><td>(45) 3333-2200</td></tr>
-    <tr><td>Estância do Churrasco</td><td>(45) 3333-2211</td></tr>
-    <tr><td>Brasa Nobre</td><td>(45) 3333-2222</td></tr>
-    <tr><td>Rancho Grill</td><td>(45) 3333-2233</td></tr>
-    <tr><td>Churras King</td><td>(45) 3333-2244</td></tr>
-    <tr><td>Brasa e Fogo</td><td>(45) 3333-2255</td></tr>
-    <tr><td>Grill & Sabor</td><td>(45) 3333-2266</td></tr>
-    <tr><td>Rancho Real</td><td>(45) 3333-2277</td></tr>
-    <tr><td>Churrasco do Sul</td><td>(45) 3333-2288</td></tr>
-    <tr><td>Fogo Alto</td><td>(45) 3333-2299</td></tr>
-  </tbody>
-</table>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <script>
+    function filtrarTabela() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("tabelaChurrascarias");
+      const trs = table.getElementsByTagName("tr");
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
-
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+      for (let i = 1; i < trs.length; i++) {
+        const rowText = trs[i].textContent.toLowerCase();
+        trs[i].style.display = rowText.includes(filter) ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
-</html>
 
-</table>
-
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
-
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
-
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
-    }
-  }
-</script>
-
-</body>
 </html>

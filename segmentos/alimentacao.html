@@ -1,52 +1,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Alimentação – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
-    <h1>🍽️ Alimentação – Cascavel</h1>
-    <p>20 opções deliciosas com contato direto</p>
+    <h1>🍽️ Segmento Alimentação – Cascavel</h1>
+    <p>20 estabelecimentos para você saborear em Cascavel</p>
   </header>
 
-  <div class="segment-header">Empresas & Contatos</div>
-  <table>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+
+  <div class="segment-header">Restaurantes, Lanchonetes, Padarias e Cafés</div>
+
+  <table id="tabelaAlimentacao">
     <thead>
       <tr>
-        <th>#</th><th>Nome</th><th>Endereço</th><th>Telefone</th>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>Restaurante Panela Velha</td><td>Rua Paraná, 2045</td><td>(45) 3022-1234</td></tr>
-      <tr><td>2</td><td>Churrascaria Portal</td><td>Av. Brasil, 7800</td><td>(45) 3321-5678</td></tr>
-      <tr><td>3</td><td>Pastelaria Tokyo</td><td>Av. Tancredo Neves, 900</td><td>(45) 3033-1122</td></tr>
-      <tr><td>4</td><td>Pizzaria Martignoni</td><td>Rua Rio de Janeiro, 1866</td><td>(45) 3035-6677</td></tr>
-      <tr><td>5</td><td>Lanchonete Sabor Brasil</td><td>Av. Brasil, 4500</td><td>(45) 3025-4455</td></tr>
-      <tr><td>6</td><td>Café da Esquina</td><td>Rua Sergipe, 320</td><td>(45) 3023-7788</td></tr>
-      <tr><td>7</td><td>Hamburgueria Grill Master</td><td>Av. Curitiba, 1200</td><td>(45) 3034-5566</td></tr>
-      <tr><td>8</td><td>Sushi Cascavel</td><td>Rua Rio Grande do Sul, 150</td><td>(45) 3036-4455</td></tr>
-      <tr><td>9</td><td>Empório Natural</td><td>Av. Tancredo Neves, 2000</td><td>(45) 3027-8899</td></tr>
-      <tr><td>10</td><td>Brigaderia Delícias</td><td>Rua Mato Grosso, 450</td><td>(45) 3028-3344</td></tr>
-      <tr><td>11</td><td>Doceria Açúcar e Afeto</td><td>Av. Brasil, 3201</td><td>(45) 3030-1100</td></tr>
-      <tr><td>12</td><td>Padaria Pão Quente</td><td>Rua Paraná, 1022</td><td>(45) 3024-5566</td></tr>
-      <tr><td>13</td><td>Creperia Bella Crepe</td><td>Rua Ceará, 210</td><td>(45) 3032-7755</td></tr>
-      <tr><td>14</td><td>Chá e Cia</td><td>Av. Brasil, 5005</td><td>(45) 3037-1122</td></tr>
-      <tr><td>15</td><td>Food Truck Street</td><td>Rua Ponta Grossa, 100</td><td>(45) 3029-6677</td></tr>
-      <tr><td>16</td><td>Salada & Saúde</td><td>Av. Tancredo Neves, 2100</td><td>(45) 3040-3344</td></tr>
-      <tr><td>17</td><td>Doces da Vó</td><td>Rua Santa Catarina, 88</td><td>(45) 3031-5566</td></tr>
-      <tr><td>18</td><td>Lounge Café</td><td>Av. Brasil, 4100</td><td>(45) 3038-1100</td></tr>
-      <tr><td>19</td><td>Buffet Bom Gosto</td><td>Rua Mato Grosso, 800</td><td>(45) 3041-7788</td></tr>
-      <tr><td>20</td><td>Mil Graus Burgers</td><td>Av. Curitiba, 1400</td><td>(45) 3042-4455</td></tr>
+      <tr>
+        <td>1</td>
+        <td>Restaurante Dona Maria</td>
+        <td>Av. Brasil, 1234 - Centro</td>
+        <td>(45) 3035-5555</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Padaria Pão Quente</td>
+        <td>Rua Paraná, 2345 - Centro</td>
+        <td>(45) 3036-6666</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Lanchonete Sabor & Cia</td>
+        <td>Rua Souza Naves, 456 - Centro</td>
+        <td>(45) 3037-7777</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Café Central</td>
+        <td>Av. Curitiba, 789 - Centro</td>
+        <td>(45) 3038-8888</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Churrascaria Gaúcha</td>
+        <td>Av. Brasil, 5678 - Jardim América</td>
+        <td>(45) 3039-9999</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Pizza do Zé</td>
+        <td>Rua Rio Grande do Sul, 1500</td>
+        <td>(45) 3040-1122</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Pastelaria Cascavel</td>
+        <td>Rua Bahia, 300</td>
+        <td>(45) 3041-2233</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Sushi Brasil</td>
+        <td>Rua Goiás, 1240</td>
+        <td>(45) 3042-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Restaurante Estação Grill</td>
+        <td>Av. JK, 2100</td>
+        <td>(45) 3043-4455</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Panificadora Boa Pão</td>
+        <td>Rua Mato Grosso, 980</td>
+        <td>(45) 3044-5566</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Café do Ponto</td>
+        <td>Av. Paraná, 1100</td>
+        <td>(45) 3045-6677</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Lanches & Cia</td>
+        <td>Rua Pernambuco, 500</td>
+        <td>(45) 3046-7788</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Casa do Açaí</td>
+        <td>Rua Pará, 770</td>
+        <td>(45) 3047-8899</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Pizzaria Central</td>
+        <td>Rua Amazonas, 900</td>
+        <td>(45) 3048-9900</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Restaurante Sabor Caseiro</td>
+        <td>Av. das Flores, 2300</td>
+        <td>(45) 3049-1010</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Choperia & Grill</td>
+        <td>Rua Ceará, 1122</td>
+        <td>(45) 3050-2020</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Doceria Delícias da Vovó</td>
+        <td>Rua Santa Catarina, 1550</td>
+        <td>(45) 3051-3030</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Bar & Restaurante Botequim</td>
+        <td>Av. Tocantins, 1400</td>
+        <td>(45) 3052-4040</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Hamburgueria Cascavel</td>
+        <td>Rua Sergipe, 400</td>
+        <td>(45) 3053-5050</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Restaurante Italiano Bella Pasta</td>
+        <td>Rua Maranhão, 350</td>
+        <td>(45) 3054-6060</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
     </tbody>
   </table>
 
-  <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
   <footer>
     <p>&copy; 2025 - Comércio de Cascavel</p>
   </footer>
+
+  <script>
+    function filtrarTabela() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("tabelaAlimentacao");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        const linha = tr[i];
+        const texto = linha.textContent.toLowerCase();
+
+        if (texto.indexOf(filter) > -1) {
+          linha.style.display = "";
+        } else {
+          linha.style.display = "none";
+        }
+      }
+    }
+  </script>
+
 </body>
+
 </html>

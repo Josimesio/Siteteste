@@ -1,52 +1,360 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Automotivo – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    header,
+    footer {
+      text-align: center;
+      margin: 20px;
+      color: #004d40;
+      font-family: Arial, sans-serif;
+    }
+
+    .segment-header {
+      font-weight: bold;
+      text-align: center;
+      margin: 10px auto 0;
+      font-size: 1.1rem;
+      color: #004d40;
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
     <h1>🚗 Segmento Automotivo – Cascavel</h1>
-    <p>20 empresas para cuidar do seu veículo</p>
+    <p>20 empresas para cuidar do seu carro com qualidade</p>
   </header>
 
-  <div class="segment-header">Oficinas, Auto Peças, Concessionárias</div>
-  <table>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+
+  <div class="segment-header">Autopeças, Oficinas e Serviços Automotivos</div>
+
+  <table id="tabelaAutomotivo">
     <thead>
       <tr>
-        <th>#</th><th>Nome</th><th>Endereço</th><th>Telefone</th>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>Auto Center Cascavel</td><td>Av. Brasil, 3050</td><td>(45) 3021-1122</td></tr>
-      <tr><td>2</td><td>Oficina Mecânica Motor Max</td><td>Rua Paraná, 1500</td><td>(45) 3022-2233</td></tr>
-      <tr><td>3</td><td>Auto Peças União</td><td>Rua Souza Naves, 800</td><td>(45) 3023-3344</td></tr>
-      <tr><td>4</td><td>Concessionária Ford Top Car</td><td>Av. Tancredo Neves, 1400</td><td>(45) 3024-4455</td></tr>
-      <tr><td>5</td><td>Lubricenter Brasil</td><td>Rua Rio de Janeiro, 1600</td><td>(45) 3025-5566</td></tr>
-      <tr><td>6</td><td>Auto Elétrica Master</td><td>Rua Paraná, 2200</td><td>(45) 3026-6677</td></tr>
-      <tr><td>7</td><td>Borracharias Cascavel</td><td>Av. Brasil, 4800</td><td>(45) 3027-7788</td></tr>
-      <tr><td>8</td><td>Car Wash Premium</td><td>Rua Rio Grande do Sul, 550</td><td>(45) 3028-8899</td></tr>
-      <tr><td>9</td><td>Revisão Rápida Express</td><td>Av. Tancredo Neves, 1700</td><td>(45) 3029-9900</td></tr>
-      <tr><td>10</td><td>Troca de Óleo LubriMax</td><td>Rua Ponta Grossa, 200</td><td>(45) 3030-1010</td></tr>
-      <tr><td>11</td><td>Centro Automotivo Brasil</td><td>Av. Brasil, 3900</td><td>(45) 3031-2020</td></tr>
-      <tr><td>12</td><td>Oficina Suspensão Total</td><td>Rua Paraná, 2800</td><td>(45) 3032-3030</td></tr>
-      <tr><td>13</td><td>Concessionária Chevrolet GNC</td><td>Av. Tancredo Neves, 2100</td><td>(45) 3033-4040</td></tr>
-      <tr><td>14</td><td>Som e Acessórios Mega Sound</td><td>Rua Rio de Janeiro, 1800</td><td>(45) 3034-5050</td></tr>
-      <tr><td>15</td><td>Funilaria Cascavel</td><td>Rua Souza Naves, 1200</td><td>(45) 3035-6060</td></tr>
-      <tr><td>16</td><td>Pneus Cascavel</td><td>Av. Brasil, 5200</td><td>(45) 3036-7070</td></tr>
-      <tr><td>17</td><td>Auto Vidros Paraná</td><td>Rua Paraná, 1700</td><td>(45) 3037-8080</td></tr>
-      <tr><td>18</td><td>Baterias Rápido</td><td>Rua Rio Grande do Sul, 700</td><td>(45) 3038-9090</td></tr>
-      <tr><td>19</td><td>Carroceria e Pintura VIP</td><td>Av. Tancredo Neves, 2300</td><td>(45) 3039-0101</td></tr>
-      <tr><td>20</td><td>Auto Center Confiança</td><td>Rua Pio XII, 450</td><td>(45) 3040-1212</td></tr>
+      <tr>
+        <td>1</td>
+        <td>Auto Peças Cascavel</td>
+        <td>Rua Paraná, 1500 – Centro</td>
+        <td>(45) 3035-1234</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Oficina Mecânica Silva</td>
+        <td>Av. Brasil, 3500 – Bairro Brasília</td>
+        <td>(45) 3036-2345</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Auto Center Cascavel</td>
+        <td>Rua Souza Naves, 980 – Centro</td>
+        <td>(45) 3037-3456</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Rodar Auto Peças</td>
+        <td>Av. Paraná, 4555 – Bairro Universitário</td>
+        <td>(45) 3038-4567</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Oficina do João</td>
+        <td>Rua Ponta Grossa, 1200 – Bairro Industrial</td>
+        <td>(45) 3039-5678</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Auto Mecânica Premium</td>
+        <td>Av. Curitiba, 2300 – Centro</td>
+        <td>(45) 3040-6789</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Centro Automotivo Cascavel</td>
+        <td>Rua Rio Grande do Sul, 450 – Centro</td>
+        <td>(45) 3041-7890</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Auto Elétrica Cascavel</td>
+        <td>Av. JK, 1100 – Bairro Industrial</td>
+        <td>(45) 3042-8901</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Troca Rápida Auto Center</td>
+        <td>Rua Paranaguá, 780 – Centro</td>
+        <td>(45) 3043-9012</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Auto Peças Top</td>
+        <td>Av. Curitiba, 5000 – Centro</td>
+        <td>(45) 3044-0123</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- 11 a 20 seguem mesmo padrão -->
+      <tr>
+        <td>11</td>
+        <td>Oficina Mecânica do Carlos</td>
+        <td>Rua Almirante Barroso, 600 – Centro</td>
+        <td>(45) 3045-1234</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Rodar Pneus</td>
+        <td>Av. Brasil, 2300 – Centro</td>
+        <td>(45) 3046-2345</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Auto Car Center</td>
+        <td>Rua Tiradentes, 1350 – Centro</td>
+        <td>(45) 3047-3456</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Oficina Mecânica Rápida</td>
+        <td>Av. Paraná, 3100 – Centro</td>
+        <td>(45) 3048-4567</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Auto Serviços R.S.</td>
+        <td>Rua General Osório, 230 – Centro</td>
+        <td>(45) 3049-5678</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Oficina do Zé</td>
+        <td>Av. Independência, 900 – Centro</td>
+        <td>(45) 3050-6789</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Auto Mecânica Central</td>
+        <td>Rua Pernambuco, 450 – Centro</td>
+        <td>(45) 3051-7890</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Loja de Pneus Cascavel</td>
+        <td>Av. das Cataratas, 2700 – Centro</td>
+        <td>(45) 3052-8901</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Auto Peças Econômica</td>
+        <td>Rua João Pessoa, 1000 – Centro</td>
+        <td>(45) 3053-9012</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Oficina Nova Geração</td>
+        <td>Av. Brasil, 4200 – Centro</td>
+        <td>(45) 3054-0123</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
     </tbody>
   </table>
 
-  <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
   <footer>
     <p>&copy; 2025 - Comércio de Cascavel</p>
   </footer>
+
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaAutomotivo");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
+    }
+  </script>
+
 </body>
+
 </html>

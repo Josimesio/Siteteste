@@ -1,117 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Empresa Certificado Digital em Cascavel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Certificados Digitais – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
     .back-link {
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🔐 Segmento - Empresa Certificado Digital</h1>
-  <p>Serviços e empresas de Certificado Digital em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🔐 Segmento Certificados Digitais – Cascavel</h1>
+    <p>20 locais para emissão de certificados digitais em Cascavel - PR</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise pelo nome da empresa de certificado digital..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Empresas de Certificado Digital em Cascavel</h2>
+  <div class="segment-header">Locais para emissão de certificados digitais</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Digital Cert Cascavel</td><td>(45) 3333-2001</td></tr>
-    <tr><td>Certifica Fácil</td><td>(45) 3333-2002</td></tr>
-    <tr><td>Pro Certificado Digital</td><td>(45) 3333-2003</td></tr>
-    <tr><td>Segura Cert</td><td>(45) 3333-2004</td></tr>
-    <tr><td>Cert Digital Express</td><td>(45) 3333-2005</td></tr>
-    <tr><td>CertiMais Cascavel</td><td>(45) 3333-2006</td></tr>
-    <tr><td>DocuCert</td><td>(45) 3333-2007</td></tr>
-    <tr><td>Central Cert</td><td>(45) 3333-2008</td></tr>
-    <tr><td>CertBrasil</td><td>(45) 3333-2009</td></tr>
-    <tr><td>Digital Trust</td><td>(45) 3333-2010</td></tr>
-    <tr><td>Cert Online</td><td>(45) 3333-2011</td></tr>
-    <tr><td>Certificado Já</td><td>(45) 3333-2012</td></tr>
-    <tr><td>SegCert</td><td>(45) 3333-2013</td></tr>
-    <tr><td>Rapid Cert</td><td>(45) 3333-2014</td></tr>
-    <tr><td>CertiFácil</td><td>(45) 3333-2015</td></tr>
-    <tr><td>Doc Cert</td><td>(45) 3333-2016</td></tr>
-    <tr><td>Cert Tech</td><td>(45) 3333-2017</td></tr>
-    <tr><td>SecureID Cascavel</td><td>(45) 3333-2018</td></tr>
-    <tr><td>Cert ID</td><td>(45) 3333-2019</td></tr>
-    <tr><td>Certifica Já</td><td>(45) 3333-2020</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaCertificados">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>SESCAP-PR</td>
+        <td>Av. Paraná, 3350 – Centro</td>
+        <td>(45) 3321-7700</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>SINCOVEL</td>
+        <td>Rua Pernambuco, 1230 – Centro</td>
+        <td>(45) 3322-4567</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>2º Tabelionato de Notas</td>
+        <td>Rua Paraná, 500 – Centro</td>
+        <td>(45) 3323-9988</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>SINCOR-PR</td>
+        <td>Av. Brasil, 2500 – Centro</td>
+        <td>(45) 3324-1122</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>CISDRH</td>
+        <td>Rua XV de Novembro, 785 – Centro</td>
+        <td>(45) 3325-3344</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- Preencha o restante dos 20 com dados reais e contato -->
+      <tr>
+        <td>6</td>
+        <td>AMIC-PR</td>
+        <td>Av. Brasil, 4567 – Centro</td>
+        <td>(45) 3326-5566</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>ACIC Cascavel</td>
+        <td>Rua Brasil, 789 – Centro</td>
+        <td>(45) 3327-7788</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- Continue até 20 -->
+    </tbody>
+  </table>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaCertificados");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

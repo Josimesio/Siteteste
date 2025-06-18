@@ -1,117 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Beleza em Cascavel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Beleza – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
     .back-link {
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>💇‍♀️ Segmento - Beleza</h1>
-  <p>Salões e serviços de beleza em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>💄 Segmento Beleza – Cascavel</h1>
+    <p>20 estabelecimentos para realçar sua beleza</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise pelo nome do salão ou serviço..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Salões e Estética</h2>
+  <div class="segment-header">Salões, Clínicas e Serviços de Beleza</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome do Salão / Serviço</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Beleza Total</td><td>(45) 3022-4500</td></tr>
-    <tr><td>Estética Bela</td><td>(45) 3022-4501</td></tr>
-    <tr><td>Salão Glamour</td><td>(45) 3022-4502</td></tr>
-    <tr><td>Studio Beleza Pura</td><td>(45) 3022-4503</td></tr>
-    <tr><td>Beleza & Cia</td><td>(45) 3022-4504</td></tr>
-    <tr><td>Estética e Spa Cascavel</td><td>(45) 3022-4505</td></tr>
-    <tr><td>Salão Elegante</td><td>(45) 3022-4506</td></tr>
-    <tr><td>Beleza Fashion</td><td>(45) 3022-4507</td></tr>
-    <tr><td>Studio de Beleza Flores</td><td>(45) 3022-4508</td></tr>
-    <tr><td>Estética Divina</td><td>(45) 3022-4509</td></tr>
-    <tr><td>Salão Moderno</td><td>(45) 3022-4510</td></tr>
-    <tr><td>Beleza em Foco</td><td>(45) 3022-4511</td></tr>
-    <tr><td>Estética Natural</td><td>(45) 3022-4512</td></tr>
-    <tr><td>Salão de Beleza Lux</td><td>(45) 3022-4513</td></tr>
-    <tr><td>Studio Beleza Viva</td><td>(45) 3022-4514</td></tr>
-    <tr><td>Beleza & Saúde</td><td>(45) 3022-4515</td></tr>
-    <tr><td>Estética Harmonia</td><td>(45) 3022-4516</td></tr>
-    <tr><td>Salão Espaço Beleza</td><td>(45) 3022-4517</td></tr>
-    <tr><td>Beleza Suprema</td><td>(45) 3022-4518</td></tr>
-    <tr><td>Estética Florescer</td><td>(45) 3022-4519</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaBeleza">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Studio Beleza Pura</td>
+        <td>Rua Paraná, 345</td>
+        <td>(45) 3022-1122</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Espaço Glamour</td>
+        <td>Av. Brasil, 1100</td>
+        <td>(45) 3023-2233</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Salão Bella Vida</td>
+        <td>Rua Mato Grosso, 520</td>
+        <td>(45) 3024-3344</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Clínica Estética Lumina</td>
+        <td>Rua Ceará, 300</td>
+        <td>(45) 3025-4455</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Beleza & Cia</td>
+        <td>Av. JK, 1500</td>
+        <td>(45) 3026-5566</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Espaço Diva</td>
+        <td>Rua Rio Grande do Sul, 870</td>
+        <td>(45) 3027-6677</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Salão Luxo</td>
+        <td>Rua Bahia, 110</td>
+        <td>(45) 3028-7788</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Estética Essencial</td>
+        <td>Rua Amazonas, 95</td>
+        <td>(45) 3029-8899</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Beleza Natural</td>
+        <td>Av. Curitiba, 780</td>
+        <td>(45) 3030-9900</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Studio Charme</td>
+        <td>Rua Santa Catarina, 220</td>
+        <td>(45) 3031-1011</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Salão Glam</td>
+        <td>Rua Goiás, 450</td>
+        <td>(45) 3032-2122</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Beleza Total</td>
+        <td>Av. das Flores, 150</td>
+        <td>(45) 3033-3233</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Clínica Spa Vida</td>
+        <td>Rua Pernambuco, 600</td>
+        <td>(45) 3034-4344</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Espaço Estilo</td>
+        <td>Rua Sergipe, 780</td>
+        <td>(45) 3035-5455</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Salão Vip</td>
+        <td>Av. Tocantins, 1200</td>
+        <td>(45) 3036-6566</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Beleza em Foco</td>
+        <td>Rua Maranhão, 300</td>
+        <td>(45) 3037-7677</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Studio Elegance</td>
+        <td>Rua Pará, 200</td>
+        <td>(45) 3038-8788</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Estética Premium</td>
+        <td>Av. Brasil, 2200</td>
+        <td>(45) 3039-9899</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Salão Arte & Beleza</td>
+        <td>Rua Santa Cruz, 900</td>
+        <td>(45) 3040-0900</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Espaço Beleza Top</td>
+        <td>Rua Mato Grosso, 700</td>
+        <td>(45) 3041-1010</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaBeleza");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

@@ -1,117 +1,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Auto Elétrica em Cascavel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Auto Elétrica – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
     .back-link {
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>⚡ Segmento - Auto Elétrica</h1>
-  <p>Especialistas em auto elétrica em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🔌 Segmento Auto Elétrica – Cascavel</h1>
+    <p>20 oficinas e serviços para seu carro em Cascavel</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise pelo nome da empresa..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Oficinas e Serviços de Auto Elétrica</h2>
+  <div class="segment-header">Oficinas, Serviços e Auto Elétricas</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Auto Elétrica Cascavel</td><td>(45) 3033-1101</td></tr>
-    <tr><td>Eletrica Rápida</td><td>(45) 3033-1102</td></tr>
-    <tr><td>Oficina Elétrica Central</td><td>(45) 3033-1103</td></tr>
-    <tr><td>Elétrica Master</td><td>(45) 3033-1104</td></tr>
-    <tr><td>Auto Elétrica Silva</td><td>(45) 3033-1105</td></tr>
-    <tr><td>Elétrica Técnica</td><td>(45) 3033-1106</td></tr>
-    <tr><td>Auto Elétrica Forte</td><td>(45) 3033-1107</td></tr>
-    <tr><td>Elétrica & Cia</td><td>(45) 3033-1108</td></tr>
-    <tr><td>Oficina Elétrica Premium</td><td>(45) 3033-1109</td></tr>
-    <tr><td>Auto Elétrica Brasil</td><td>(45) 3033-1110</td></tr>
-    <tr><td>Elétrica Rápida Express</td><td>(45) 3033-1111</td></tr>
-    <tr><td>Auto Elétrica Nova Era</td><td>(45) 3033-1112</td></tr>
-    <tr><td>Elétrica 24h</td><td>(45) 3033-1113</td></tr>
-    <tr><td>Auto Elétrica Prime</td><td>(45) 3033-1114</td></tr>
-    <tr><td>Oficina Elétrica Santa Fé</td><td>(45) 3033-1115</td></tr>
-    <tr><td>Auto Elétrica Top</td><td>(45) 3033-1116</td></tr>
-    <tr><td>Elétrica Total</td><td>(45) 3033-1117</td></tr>
-    <tr><td>Auto Elétrica Planalto</td><td>(45) 3033-1118</td></tr>
-    <tr><td>Elétrica Rios</td><td>(45) 3033-1119</td></tr>
-    <tr><td>Auto Elétrica Central Park</td><td>(45) 3033-1120</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaAutoEletrica">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Auto Elétrica Brasil</td>
+        <td>Rua Paraná, 120 - Centro</td>
+        <td>(45) 3035-1212</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Elétrica Car Cascavel</td>
+        <td>Av. Brasil, 850 - Centro</td>
+        <td>(45) 3036-3434</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Auto Elétrica Souza</td>
+        <td>Rua Ceará, 450 - Centro</td>
+        <td>(45) 3037-5656</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Elétrica Express</td>
+        <td>Rua Mato Grosso, 980 - Centro</td>
+        <td>(45) 3038-7878</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Auto Elétrica Nova</td>
+        <td>Av. JK, 1500 - Jardim América</td>
+        <td>(45) 3039-9090</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Elétrica Total</td>
+        <td>Rua Rio Grande do Sul, 2200</td>
+        <td>(45) 3040-1010</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Auto Elétrica Fênix</td>
+        <td>Rua Bahia, 600</td>
+        <td>(45) 3041-2323</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Elétrica Center</td>
+        <td>Rua Amazonas, 150</td>
+        <td>(45) 3042-4545</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Auto Elétrica Vanguarda</td>
+        <td>Av. Curitiba, 200</td>
+        <td>(45) 3043-6767</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Elétrica Forte</td>
+        <td>Rua Santa Catarina, 1300</td>
+        <td>(45) 3044-8989</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Auto Elétrica Cascavel</td>
+        <td>Rua Goiás, 1100</td>
+        <td>(45) 3045-1212</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Elétrica Rápida</td>
+        <td>Av. das Flores, 900</td>
+        <td>(45) 3046-3434</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Auto Elétrica Prime</td>
+        <td>Rua Pernambuco, 1400</td>
+        <td>(45) 3047-5656</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Elétrica Master</td>
+        <td>Rua Sergipe, 500</td>
+        <td>(45) 3048-7878</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Auto Elétrica Alfa</td>
+        <td>Av. Tocantins, 750</td>
+        <td>(45) 3049-9090</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Elétrica 24h</td>
+        <td>Rua Maranhão, 420</td>
+        <td>(45) 3050-1010</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Auto Elétrica Nova Era</td>
+        <td>Rua Pará, 300</td>
+        <td>(45) 3051-2323</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Elétrica Premium</td>
+        <td>Av. Brasil, 1900</td>
+        <td>(45) 3052-4545</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Auto Elétrica Top</td>
+        <td>Rua Santa Cruz, 1100</td>
+        <td>(45) 3053-6767</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Elétrica Quality</td>
+        <td>Rua Mato Grosso, 700</td>
+        <td>(45) 3054-8989</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+    </tbody>
+  </table>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
+  <script>
+    function filtrarTabela() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("tabelaAutoEletrica");
+      const tr = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+      for (let i = 1; i < tr.length; i++) {
+        const linha = tr[i];
+        const texto = linha.textContent.toLowerCase();
+
+        if (texto.indexOf(filter) > -1) {
+          linha.style.display = "";
+        } else {
+          linha.style.display = "none";
+        }
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

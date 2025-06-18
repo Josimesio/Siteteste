@@ -1,117 +1,212 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Agropecuária em Cascavel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Agropecuária – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
     .back-link {
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🌾 Segmento - Agropecuária</h1>
-  <p>Os melhores fornecedores e serviços agropecuários em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🌾 Segmento Agropecuária – Cascavel</h1>
+    <p>20 agropecuárias para seu negócio no campo</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise pelo nome do comércio agropecuário..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Comércios Agropecuários em Cascavel</h2>
+  <div class="segment-header">Agropecuárias, Pet Shops e Serviços Rurais</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome do Comércio</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Agrocenter Cascavel</td><td>(45) 3333-1001</td></tr>
-    <tr><td>Fazenda São Pedro</td><td>(45) 3333-1002</td></tr>
-    <tr><td>Agropecuária Silva</td><td>(45) 3333-1003</td></tr>
-    <tr><td>Casa do Agro</td><td>(45) 3333-1004</td></tr>
-    <tr><td>Agro Forte</td><td>(45) 3333-1005</td></tr>
-    <tr><td>Agro Brasil</td><td>(45) 3333-1006</td></tr>
-    <tr><td>Agropecuária Nova Era</td><td>(45) 3333-1007</td></tr>
-    <tr><td>Fazenda Boa Vista</td><td>(45) 3333-1008</td></tr>
-    <tr><td>Agro Máquinas</td><td>(45) 3333-1009</td></tr>
-    <tr><td>Agro Industrial</td><td>(45) 3333-1010</td></tr>
-    <tr><td>Agro & Cia</td><td>(45) 3333-1011</td></tr>
-    <tr><td>Agropecuária Cascavel</td><td>(45) 3333-1012</td></tr>
-    <tr><td>Agro Campo</td><td>(45) 3333-1013</td></tr>
-    <tr><td>Agro Centro Oeste</td><td>(45) 3333-1014</td></tr>
-    <tr><td>Agro Terra</td><td>(45) 3333-1015</td></tr>
-    <tr><td>Agro Paraná</td><td>(45) 3333-1016</td></tr>
-    <tr><td>Fazenda Novo Horizonte</td><td>(45) 3333-1017</td></tr>
-    <tr><td>Agro Agrícola</td><td>(45) 3333-1018</td></tr>
-    <tr><td>Agrovida</td><td>(45) 3333-1019</td></tr>
-    <tr><td>Agro Center Brasil</td><td>(45) 3333-1020</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaAgropecuaria">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Becker Agro Pet</td>
+        <td>Rua da Amizade, 709, 14 de Novembro</td>
+        <td>(45) 3326-3264</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Agrolora Veterinária</td>
+        <td>Rua Erechim, 848, Centro</td>
+        <td>(45) 3225-3345</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Agropecuária Cavalo de Ferro</td>
+        <td>Av. Barão do Rio Branco, 1150, São Cristóvão</td>
+        <td>(45) 3224-6644</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Agro Pio XII</td>
+        <td>Rua Pio XII, 974 - s-1, Neva</td>
+        <td>(45) 3038-2398</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Agropecuária Agriboi</td>
+        <td>Av. Brasil, 4197, Centro</td>
+        <td>(45) 3224-5115</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Agropecuária e Pet Shop Boiadeiro</td>
+        <td>Av. Brasil, 7848, Coqueiral</td>
+        <td>(45) 3038-8876</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Agropet Banho e Tosa Cantinho Animal</td>
+        <td>Rua Vinícius de Moraes, 1280, Brasília</td>
+        <td>(45) 3222-2216</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Agrosat Planejamento Agrícola</td>
+        <td>Rua Osvaldo Cruz, 2439, Centro</td>
+        <td>(45) 3222-2757</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <!-- Complete até 20 aqui com dados reais ou fictícios -->
+    </tbody>
+  </table>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaAgropecuaria");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>
