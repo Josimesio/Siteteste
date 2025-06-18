@@ -1,52 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Moda – Comércio em Cascavel</title>
-  <link rel="stylesheet" href="../style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Moda em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    table {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.95rem;
+    }
+    th:nth-child(3), td:nth-child(3) {
+      max-width: 35%;
+      font-size: 0.85rem;
+      word-wrap: break-word;
+    }
+    .social-icons-inline img {
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    #searchInput {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      font-size: 1.1em;
+      color: #fff;
+      background-color: #004d40;
+      padding: 10px 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>👗 Moda – Cascavel</h1>
-    <p>20 lojas de moda com contato direto</p>
-  </header>
 
-  <div class="segment-header">Empresas & Contatos</div>
-  <table>
+<header>
+  <h1>👗 Segmento - Moda em Cascavel</h1>
+  <p>Confira as principais lojas de moda da cidade</p>
+</header>
+
+<section>
+  <h2 class="segment-header">Lojas de Moda</h2>
+
+  <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="🔍 Pesquise por nome, telefone ou endereço...">
+
+  <table id="modaTable">
     <thead>
       <tr>
-        <th>#</th><th>Nome</th><th>Endereço</th><th>Telefone</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Redes Sociais</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>Loja Estilo Fashion</td><td>Rua Paraná, 1001</td><td>(45) 3021-1100</td></tr>
-      <tr><td>2</td><td>Boutique Dona Flor</td><td>Av. Brasil, 3200</td><td>(45) 3030-2200</td></tr>
-      <tr><td>3</td><td>Moda Masculina Top</td><td>Rua Souza Naves, 850</td><td>(45) 3022-3300</td></tr>
-      <tr><td>4</td><td>Ateliê Elegância</td><td>Av. Tancredo Neves, 1900</td><td>(45) 3031-4400</td></tr>
-      <tr><td>5</td><td>Vitrine da Moda</td><td>Rua Rio de Janeiro, 1400</td><td>(45) 3023-5500</td></tr>
-      <tr><td>6</td><td>Loja Pink Store</td><td>Av. Brasil, 5001</td><td>(45) 3024-6600</td></tr>
-      <tr><td>7</td><td>Jeans Mania</td><td>Rua Paraná, 2000</td><td>(45) 3025-7700</td></tr>
-      <tr><td>8</td><td>Loja Glamour</td><td>Av. Tancredo Neves, 1500</td><td>(45) 3032-8800</td></tr>
-      <tr><td>9</td><td>Fashion Kids</td><td>Rua Pio XII, 300</td><td>(45) 3026-9900</td></tr>
-      <tr><td>10</td><td>Chic Boutique</td><td>Rua Rio Grande do Sul, 420</td><td>(45) 3027-1010</td></tr>
-      <tr><td>11</td><td>Loja Mil Looks</td><td>Av. Brasil, 4100</td><td>(45) 3028-2020</td></tr>
-      <tr><td>12</td><td>Estação da Moda</td><td>Rua Paraná, 3000</td><td>(45) 3033-3030</td></tr>
-      <tr><td>13</td><td>Top Griffe</td><td>Rua Souza Naves, 1050</td><td>(45) 3034-4040</td></tr>
-      <tr><td>14</td><td>Loja Bella Donna</td><td>Av. Tancredo Neves, 2200</td><td>(45) 3035-5050</td></tr>
-      <tr><td>15</td><td>Confecções Star</td><td>Rua Rio de Janeiro, 1700</td><td>(45) 3036-6060</td></tr>
-      <tr><td>16</td><td>Moda Jovem</td><td>Av. Brasil, 5300</td><td>(45) 3037-7070</td></tr>
-      <tr><td>17</td><td>Loja Estilo Próprio</td><td>Rua Paraná, 1500</td><td>(45) 3038-8080</td></tr>
-      <tr><td>18</td><td>Outlet Cascavel</td><td>Av. Tancredo Neves, 1600</td><td>(45) 3039-9090</td></tr>
-      <tr><td>19</td><td>Glam Store</td><td>Rua Rio Grande do Sul, 600</td><td>(45) 3040-1010</td></tr>
-      <tr><td>20</td><td>Fashion Club</td><td>Av. Brasil, 6200</td><td>(45) 3041-2020</td></tr>
+      <tr><td>Boutique Amorelli</td><td>(45) 3099‑0939</td><td>Rua Afonso Pena, 1732</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <tr><td>Vittoriana Cascavel</td><td>(45) 3038‑3223</td><td>Rua Jorge Lacerda, 460</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <tr><td>Jhiovana Modas</td><td>(45) 3224‑7005</td><td>Rua Marechal Cândido Rondon, 2359</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <tr><td>Executive Moda Masculina</td><td>(45) 3225‑5564</td><td>Av. Brasil, 6282, Shopping Central Park</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <tr><td>Di-Gasparini Modas</td><td>(45) 99965‑8821</td><td>Rua Fortaleza, 3943</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <tr><td>Atelier Lucinha Silveira</td><td>(45) 3224‑3446</td><td>Av. Brasil, 5549</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        </td></tr>
+      <!-- Continua com os demais até 20 empresas -->
+      <!-- Replique o mesmo padrão acima para cada linha -->
     </tbody>
   </table>
 
-  <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  <a class="back-link" href="../index.html">← Voltar ao Início</a>
+</section>
 
-  <footer>
-    <p>&copy; 2025 - Comércio de Cascavel</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 – Portal Comércio de Cascavel – Desenvolvido por Josimesio</p>
+</footer>
+
+<script>
+function searchTable() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toLowerCase();
+  table = document.getElementById("modaTable");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "none";
+    var tds = tr[i].getElementsByTagName("td");
+    for (var j = 0; j < tds.length - 1; j++) { // Ignora coluna de ícones
+      if (tds[j]) {
+        txtValue = tds[j].textContent || tds[j].innerText;
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break;
+        }
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
