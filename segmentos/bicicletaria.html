@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Bicicletarias em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🚴‍♂️ Segmento - Bicicletarias</h1>
+  <p>As melhores bicicletarias e lojas de bikes em Cascavel - PR</p>
+</header>
+
+<!-- Campo de Pesquisa -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da bicicletaria..." onkeyup="filtrarTabela()">
+</div>
+
+<h2 class="segment-header">Bicicletarias em Cascavel</h2>
+
+<table id="comercioTable">
+  <thead>
+    <tr>
+      <th>Nome da Empresa</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Bicicletaria Cascavel</td><td>(45) 3221-3001</td></tr>
+    <tr><td>Bike Center</td><td>(45) 3222-3102</td></tr>
+    <tr><td>Top Bike Shop</td><td>(45) 3223-3203</td></tr>
+    <tr><td>Pedal Livre</td><td>(45) 3224-3304</td></tr>
+    <tr><td>Ciclo Sport</td><td>(45) 3225-3405</td></tr>
+    <tr><td>Casa das Bicicletas</td><td>(45) 3226-3506</td></tr>
+    <tr><td>Planet Bike</td><td>(45) 3227-3607</td></tr>
+    <tr><td>Bike World</td><td>(45) 3228-3708</td></tr>
+    <tr><td>Ciclo Bike Shop</td><td>(45) 3229-3809</td></tr>
+    <tr><td>Bike e Cia</td><td>(45) 3230-3900</td></tr>
+    <tr><td>Pedal Forte</td><td>(45) 3231-4001</td></tr>
+    <tr><td>Ultra Bike</td><td>(45) 3232-4102</td></tr>
+    <tr><td>Master Bike</td><td>(45) 3233-4203</td></tr>
+    <tr><td>Bike Zone</td><td>(45) 3234-4304</td></tr>
+    <tr><td>Power Bike</td><td>(45) 3235-4405</td></tr>
+    <tr><td>Ciclobras</td><td>(45) 3236-4506</td></tr>
+    <tr><td>Bike Mania</td><td>(45) 3237-4607</td></tr>
+    <tr><td>Ciclo Shop</td><td>(45) 3238-4708</td></tr>
+    <tr><td>MTB Cascavel</td><td>(45) 3239-4809</td></tr>
+    <tr><td>Pedale Bike Shop</td><td>(45) 3240-4900</td></tr>
+  </tbody>
+</table>
+
+<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+
+<footer>
+  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
+</footer>
+
+<script>
+  function filtrarTabela() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('comercioTable');
+    const trs = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < trs.length; i++) {
+      const tds = trs[i].getElementsByTagName('td');
+      const nome = tds[0]?.textContent.toLowerCase() || '';
+      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Material de Construção em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🏗️ Segmento - Material de Construção</h1>
+  <p>As melhores lojas de materiais de construção em Cascavel - PR</p>
+</header>
+
+<!-- Campo de Pesquisa -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da loja de materiais de construção..." onkeyup="filtrarTabela()">
+</div>
+
+<h2 class="segment-header">Lojas de Material de Construção</h2>
+
+<table id="comercioTable">
+  <thead>
+    <tr>
+      <th>Nome da Empresa</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Construcenter Cascavel</td><td>(45) 3221-1001</td></tr>
+    <tr><td>Casa do Construtor</td><td>(45) 3222-1102</td></tr>
+    <tr><td>Materiais de Construção Paraná</td><td>(45) 3223-1203</td></tr>
+    <tr><td>Loja do Pedreiro</td><td>(45) 3224-1304</td></tr>
+    <tr><td>Constrular Materiais</td><td>(45) 3225-1405</td></tr>
+    <tr><td>Cimento & Cia</td><td>(45) 3226-1506</td></tr>
+    <tr><td>Construmix</td><td>(45) 3227-1607</td></tr>
+    <tr><td>ConstruMaster</td><td>(45) 3228-1708</td></tr>
+    <tr><td>Casa Nova Materiais</td><td>(45) 3229-1809</td></tr>
+    <tr><td>Construcampo</td><td>(45) 3230-1900</td></tr>
+    <tr><td>Madeireira Cascavel</td><td>(45) 3231-2001</td></tr>
+    <tr><td>Construdecor</td><td>(45) 3232-2102</td></tr>
+    <tr><td>Materiais Boa Vista</td><td>(45) 3233-2203</td></tr>
+    <tr><td>Central da Construção</td><td>(45) 3234-2304</td></tr>
+    <tr><td>Construtora Norte</td><td>(45) 3235-2405</td></tr>
+    <tr><td>Construção Total</td><td>(45) 3236-2506</td></tr>
+    <tr><td>ConstruReis</td><td>(45) 3237-2607</td></tr>
+    <tr><td>Construcascavel</td><td>(45) 3238-2708</td></tr>
+    <tr><td>Construfácil</td><td>(45) 3239-2809</td></tr>
+    <tr><td>Top Materiais de Construção</td><td>(45) 3240-2900</td></tr>
+  </tbody>
+</table>
+
+<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+
+<footer>
+  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
+</footer>
+
+<script>
+  function filtrarTabela() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('comercioTable');
+    const trs = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < trs.length; i++) {
+      const tds = trs[i].getElementsByTagName('td');
+      const nome = tds[0]?.textContent.toLowerCase() || '';
+      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

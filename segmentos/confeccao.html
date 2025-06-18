@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Confecção em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>👕 Segmento - Confecção</h1>
+  <p>Principais lojas de confecção em Cascavel - PR</p>
+</header>
+
+<!-- Campo de Pesquisa -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da loja de confecção..." onkeyup="filtrarTabela()">
+</div>
+
+<h2 class="segment-header">Lojas de Confecção</h2>
+
+<table id="comercioTable">
+  <thead>
+    <tr>
+      <th>Nome do Comércio</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Moda Jovem Confecções</td><td>(45) 3224-3101</td></tr>
+    <tr><td>Casual Wear</td><td>(45) 3225-3202</td></tr>
+    <tr><td>Loja Estilo Fashion</td><td>(45) 3226-3303</td></tr>
+    <tr><td>Top Look Confecções</td><td>(45) 3227-3404</td></tr>
+    <tr><td>Center Modas</td><td>(45) 3228-3505</td></tr>
+    <tr><td>Brasil Confecções</td><td>(45) 3229-3606</td></tr>
+    <tr><td>Atacadão da Moda</td><td>(45) 3230-3707</td></tr>
+    <tr><td>Flor de Lis Modas</td><td>(45) 3231-3808</td></tr>
+    <tr><td>Elegance Roupas</td><td>(45) 3232-3909</td></tr>
+    <tr><td>Fashion Point</td><td>(45) 3233-4010</td></tr>
+    <tr><td>Planet Fashion</td><td>(45) 3234-4111</td></tr>
+    <tr><td>Loja Estação Moda</td><td>(45) 3235-4212</td></tr>
+    <tr><td>Moda Center Cascavel</td><td>(45) 3236-4313</td></tr>
+    <tr><td>Confecções Rio Branco</td><td>(45) 3237-4414</td></tr>
+    <tr><td>Top Jeans</td><td>(45) 3238-4515</td></tr>
+    <tr><td>Fashion Kids</td><td>(45) 3239-4616</td></tr>
+    <tr><td>Roupas & Estilo</td><td>(45) 3240-4717</td></tr>
+    <tr><td>Estilo Urbano</td><td>(45) 3241-4818</td></tr>
+    <tr><td>Loja Primavera</td><td>(45) 3242-4919</td></tr>
+    <tr><td>Vila Fashion</td><td>(45) 3243-5020</td></tr>
+  </tbody>
+</table>
+
+<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+
+<footer>
+  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
+</footer>
+
+<script>
+  function filtrarTabela() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('comercioTable');
+    const trs = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < trs.length; i++) {
+      const tds = trs[i].getElementsByTagName('td');
+      const nome = tds[0]?.textContent.toLowerCase() || '';
+      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

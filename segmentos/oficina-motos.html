@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Oficinas de Motos em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🏍️ Segmento - Oficinas de Motos</h1>
+  <p>Os melhores serviços para motos em Cascavel - PR</p>
+</header>
+
+<!-- Campo de Pesquisa -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da oficina de motos..." onkeyup="filtrarTabela()">
+</div>
+
+<h2 class="segment-header">Oficinas de Motos</h2>
+
+<table id="comercioTable">
+  <thead>
+    <tr>
+      <th>Nome da Oficina</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Oficina Moto Center</td><td>(45) 3271-7101</td></tr>
+    <tr><td>Top Moto Service</td><td>(45) 3272-7202</td></tr>
+    <tr><td>Moto Master</td><td>(45) 3273-7303</td></tr>
+    <tr><td>Oficina Speed Bike</td><td>(45) 3274-7404</td></tr>
+    <tr><td>Casa da Moto</td><td>(45) 3275-7505</td></tr>
+    <tr><td>Auto Moto Mecânica</td><td>(45) 3276-7606</td></tr>
+    <tr><td>Moto Center Cascavel</td><td>(45) 3277-7707</td></tr>
+    <tr><td>Oficina Racing Motos</td><td>(45) 3278-7808</td></tr>
+    <tr><td>Moto Performance</td><td>(45) 3279-7909</td></tr>
+    <tr><td>Doctor Moto</td><td>(45) 3280-8010</td></tr>
+    <tr><td>Oficina Moto Express</td><td>(45) 3281-8111</td></tr>
+    <tr><td>Moto Clean Service</td><td>(45) 3282-8212</td></tr>
+    <tr><td>Central Moto Peças</td><td>(45) 3283-8313</td></tr>
+    <tr><td>Power Motos</td><td>(45) 3284-8414</td></tr>
+    <tr><td>Fênix Motos</td><td>(45) 3285-8515</td></tr>
+    <tr><td>Oficina Moto Rápida</td><td>(45) 3286-8616</td></tr>
+    <tr><td>Full Gas Motos</td><td>(45) 3287-8717</td></tr>
+    <tr><td>Performance Bike</td><td>(45) 3288-8818</td></tr>
+    <tr><td>Oficina MotoSul</td><td>(45) 3289-8919</td></tr>
+    <tr><td>Vip Moto Service</td><td>(45) 3290-9020</td></tr>
+  </tbody>
+</table>
+
+<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+
+<footer>
+  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
+</footer>
+
+<script>
+  function filtrarTabela() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('comercioTable');
+    const trs = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < trs.length; i++) {
+      const tds = trs[i].getElementsByTagName('td');
+      const nome = tds[0]?.textContent.toLowerCase() || '';
+      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

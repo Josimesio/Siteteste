@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segmento - Radiadores em Cascavel</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🚗 Segmento - Radiadores</h1>
+  <p>Locais especializados em radiadores automotivos em Cascavel - PR</p>
+</header>
+
+<!-- Campo de Pesquisa -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da empresa de radiadores..." onkeyup="filtrarTabela()">
+</div>
+
+<h2 class="segment-header">Empresas de Radiadores</h2>
+
+<table id="comercioTable">
+  <thead>
+    <tr>
+      <th>Nome da Empresa</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Radiadores Cascavel</td><td>(45) 3301-1101</td></tr>
+    <tr><td>Auto Radiadores Paraná</td><td>(45) 3302-1202</td></tr>
+    <tr><td>Radiadores Sul Brasil</td><td>(45) 3303-1303</td></tr>
+    <tr><td>Radiadores Rápido</td><td>(45) 3304-1404</td></tr>
+    <tr><td>Top Radiadores</td><td>(45) 3305-1505</td></tr>
+    <tr><td>Oficina de Radiadores Central</td><td>(45) 3306-1606</td></tr>
+    <tr><td>Radiadores União</td><td>(45) 3307-1707</td></tr>
+    <tr><td>Master Radiadores</td><td>(45) 3308-1808</td></tr>
+    <tr><td>Radiadores Fênix</td><td>(45) 3309-1909</td></tr>
+    <tr><td>Auto Peças & Radiadores</td><td>(45) 3310-2000</td></tr>
+    <tr><td>Radiadores Speed</td><td>(45) 3311-2101</td></tr>
+    <tr><td>Central Sul Radiadores</td><td>(45) 3312-2202</td></tr>
+    <tr><td>Radiadores e Arrefecimento</td><td>(45) 3313-2303</td></tr>
+    <tr><td>Radiadores Ideal</td><td>(45) 3314-2404</td></tr>
+    <tr><td>Oficina Radiadores Vip</td><td>(45) 3315-2505</td></tr>
+    <tr><td>Serviço Rápido Radiadores</td><td>(45) 3316-2606</td></tr>
+    <tr><td>Radiadores Brasil Sul</td><td>(45) 3317-2707</td></tr>
+    <tr><td>Radiadores e Cia</td><td>(45) 3318-2808</td></tr>
+    <tr><td>Auto Center Radiadores</td><td>(45) 3319-2909</td></tr>
+    <tr><td>Radiadores Motores & Cia</td><td>(45) 3320-3000</td></tr>
+  </tbody>
+</table>
+
+<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+
+<footer>
+  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
+</footer>
+
+<script>
+  function filtrarTabela() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('comercioTable');
+    const trs = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < trs.length; i++) {
+      const tds = trs[i].getElementsByTagName('td');
+      const nome = tds[0]?.textContent.toLowerCase() || '';
+      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+    }
+  }
+</script>
+
+</body>
+</html>

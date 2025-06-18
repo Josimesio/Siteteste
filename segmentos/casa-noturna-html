@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Beleza em Cascavel</title>
+  <title>Segmento - Casa Noturna em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
     .search-box {
@@ -46,49 +46,49 @@
 <body>
 
 <header>
-  <h1>💇‍♀️ Segmento - Beleza</h1>
-  <p>Salões e serviços de beleza em Cascavel - PR</p>
+  <h1>🎉 Segmento - Casa Noturna</h1>
+  <p>As melhores casas noturnas e baladas de Cascavel - PR</p>
 </header>
 
 <div class="search-box">
   <input
     type="text"
     id="searchInput"
-    placeholder="🔍 Pesquise pelo nome do salão ou serviço..."
+    placeholder="🔍 Pesquise pelo nome da casa noturna..."
     onkeyup="filtrarTabela()"
   />
 </div>
 
-<h2 class="segment-header">Salões e Estética</h2>
+<h2 class="segment-header">Casas Noturnas em Cascavel</h2>
 
 <table id="comercioTable">
   <thead>
     <tr>
-      <th>Nome do Salão / Serviço</th>
+      <th>Nome da Casa</th>
       <th>Telefone</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>Beleza Total</td><td>(45) 3022-4500</td></tr>
-    <tr><td>Estética Bela</td><td>(45) 3022-4501</td></tr>
-    <tr><td>Salão Glamour</td><td>(45) 3022-4502</td></tr>
-    <tr><td>Studio Beleza Pura</td><td>(45) 3022-4503</td></tr>
-    <tr><td>Beleza & Cia</td><td>(45) 3022-4504</td></tr>
-    <tr><td>Estética e Spa Cascavel</td><td>(45) 3022-4505</td></tr>
-    <tr><td>Salão Elegante</td><td>(45) 3022-4506</td></tr>
-    <tr><td>Beleza Fashion</td><td>(45) 3022-4507</td></tr>
-    <tr><td>Studio de Beleza Flores</td><td>(45) 3022-4508</td></tr>
-    <tr><td>Estética Divina</td><td>(45) 3022-4509</td></tr>
-    <tr><td>Salão Moderno</td><td>(45) 3022-4510</td></tr>
-    <tr><td>Beleza em Foco</td><td>(45) 3022-4511</td></tr>
-    <tr><td>Estética Natural</td><td>(45) 3022-4512</td></tr>
-    <tr><td>Salão de Beleza Lux</td><td>(45) 3022-4513</td></tr>
-    <tr><td>Studio Beleza Viva</td><td>(45) 3022-4514</td></tr>
-    <tr><td>Beleza & Saúde</td><td>(45) 3022-4515</td></tr>
-    <tr><td>Estética Harmonia</td><td>(45) 3022-4516</td></tr>
-    <tr><td>Salão Espaço Beleza</td><td>(45) 3022-4517</td></tr>
-    <tr><td>Beleza Suprema</td><td>(45) 3022-4518</td></tr>
-    <tr><td>Estética Florescer</td><td>(45) 3022-4519</td></tr>
+    <tr><td>Club Night</td><td>(45) 3333-1100</td></tr>
+    <tr><td>Balada Mania</td><td>(45) 3333-1111</td></tr>
+    <tr><td>After Hours</td><td>(45) 3333-1122</td></tr>
+    <tr><td>Disco Flash</td><td>(45) 3333-1133</td></tr>
+    <tr><td>Boate Lux</td><td>(45) 3333-1144</td></tr>
+    <tr><td>Blackout Club</td><td>(45) 3333-1155</td></tr>
+    <tr><td>Vibe Noturna</td><td>(45) 3333-1166</td></tr>
+    <tr><td>Moonlight Club</td><td>(45) 3333-1177</td></tr>
+    <tr><td>Sunset Lounge</td><td>(45) 3333-1188</td></tr>
+    <tr><td>House Party</td><td>(45) 3333-1199</td></tr>
+    <tr><td>Flashback Club</td><td>(45) 3333-1200</td></tr>
+    <tr><td>Neo Club</td><td>(45) 3333-1211</td></tr>
+    <tr><td>Beat House</td><td>(45) 3333-1222</td></tr>
+    <tr><td>Electric Vibe</td><td>(45) 3333-1233</td></tr>
+    <tr><td>Club 360</td><td>(45) 3333-1244</td></tr>
+    <tr><td>Open Bar Lounge</td><td>(45) 3333-1255</td></tr>
+    <tr><td>Skyline Club</td><td>(45) 3333-1266</td></tr>
+    <tr><td>Prime Night</td><td>(45) 3333-1277</td></tr>
+    <tr><td>Pulse Club</td><td>(45) 3333-1288</td></tr>
+    <tr><td>Club Horizon</td><td>(45) 3333-1299</td></tr>
   </tbody>
 </table>
 
