@@ -6,24 +6,38 @@
   <title>Segmento - Moda em Cascavel</title>
   <link rel="stylesheet" href="../style.css">
   <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+    }
     table {
       width: 90%;
       max-width: 1000px;
       margin: 20px auto;
       border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       background-color: #fff;
     }
-    th, td {
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+    td {
       padding: 10px 12px;
       text-align: left;
-      border-bottom: 1px solid #ddd;
       font-size: 0.95rem;
     }
-    th:nth-child(3), td:nth-child(3) {
-      max-width: 35%;
-      font-size: 0.85rem;
-      word-wrap: break-word;
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+    tr:hover {
+      background: #e0f2f1;
     }
     .social-icons-inline img {
       width: 18px;
@@ -56,6 +70,12 @@
     .back-link:hover {
       opacity: 0.8;
     }
+    .segment-header {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #004d40;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -79,46 +99,199 @@
         <th>Redes Sociais</th>
       </tr>
     </thead>
-    <tbody>
-      <tr><td>Boutique Amorelli</td><td>(45) 3099‑0939</td><td>Rua Afonso Pena, 1732</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <tr><td>Vittoriana Cascavel</td><td>(45) 3038‑3223</td><td>Rua Jorge Lacerda, 460</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <tr><td>Jhiovana Modas</td><td>(45) 3224‑7005</td><td>Rua Marechal Cândido Rondon, 2359</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <tr><td>Executive Moda Masculina</td><td>(45) 3225‑5564</td><td>Av. Brasil, 6282, Shopping Central Park</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <tr><td>Di-Gasparini Modas</td><td>(45) 99965‑8821</td><td>Rua Fortaleza, 3943</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <tr><td>Atelier Lucinha Silveira</td><td>(45) 3224‑3446</td><td>Av. Brasil, 5549</td>
-        <td class="social-icons-inline">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-        </td></tr>
-      <!-- Continua com os demais até 20 empresas -->
-      <!-- Replique o mesmo padrão acima para cada linha -->
-    </tbody>
+   <tbody>
+  <tr>
+    <td>Boutique Amorelli</td>
+    <td>(45) 3099‑0939</td>
+    <td>Rua Afonso Pena, 1732</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Vittoriana Cascavel</td>
+    <td>(45) 3038‑3223</td>
+    <td>Rua Jorge Lacerda, 460</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Jhiovana Modas</td>
+    <td>(45) 3224‑7005</td>
+    <td>Rua Marechal Cândido Rondon, 2359</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Executive Moda Masculina</td>
+    <td>(45) 3225‑5564</td>
+    <td>Av. Brasil, 6282, Shopping Central Park</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Di-Gasparini Modas</td>
+    <td>(45) 99965‑8821</td>
+    <td>Rua Fortaleza, 3943</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Atelier Lucinha Silveira</td>
+    <td>(45) 3224‑3446</td>
+    <td>Av. Brasil, 5549</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Bella Fashion</td>
+    <td>(45) 3039‑1010</td>
+    <td>Rua Brasilina Ferreira, 1221</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Fashion Store</td>
+    <td>(45) 3224‑8765</td>
+    <td>Av. Paraná, 780</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Moda Chic</td>
+    <td>(45) 3037‑2233</td>
+    <td>Rua Paraná, 321</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Bella Vista</td>
+    <td>(45) 3225‑3456</td>
+    <td>Rua Rio Grande do Sul, 105</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Glamour</td>
+    <td>(45) 3038‑4567</td>
+    <td>Av. Brasil, 1245</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Moda Elegante</td>
+    <td>(45) 3223‑9988</td>
+    <td>Rua Paraná, 780</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Maravilha</td>
+    <td>(45) 3099‑6543</td>
+    <td>Rua São Paulo, 456</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Estilo & Cia</td>
+    <td>(45) 3224‑5678</td>
+    <td>Av. Paraná, 1987</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Fashion House</td>
+    <td>(45) 3037‑4455</td>
+    <td>Rua Marechal Deodoro, 150</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Modas Lux</td>
+    <td>(45) 3225‑7788</td>
+    <td>Av. Brasil, 1234</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Loja Estilo Urbano</td>
+    <td>(45) 3039‑1122</td>
+    <td>Rua Marechal Floriano, 678</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Fashion Point</td>
+    <td>(45) 3224‑8899</td>
+    <td>Av. Brasil, 1500</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>Moda & Estilo</td>
+    <td>(45) 3038‑5566</td>
+    <td>Rua Paraná, 890</td>
+    <td class="social-icons-inline">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    </td>
+  </tr>
+</tbody>
+
   </table>
 
   <a class="back-link" href="../index.html">← Voltar ao Início</a>
@@ -139,7 +312,7 @@ function searchTable() {
   for (i = 1; i < tr.length; i++) {
     tr[i].style.display = "none";
     var tds = tr[i].getElementsByTagName("td");
-    for (var j = 0; j < tds.length - 1; j++) { // Ignora coluna de ícones
+    for (var j = 0; j < tds.length - 1; j++) {
       if (tds[j]) {
         txtValue = tds[j].textContent || tds[j].innerText;
         if (txtValue.toLowerCase().indexOf(filter) > -1) {
