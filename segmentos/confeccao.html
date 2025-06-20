@@ -1,90 +1,345 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segmento - Confecção em Cascavel</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Confecção – Comércio em Cascavel</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
       border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>👕 Segmento - Confecção</h1>
-  <p>Principais lojas de confecção em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🧵 Segmento Confecção – Cascavel</h1>
+    <p>20 empresas de confecção para você conhecer na cidade</p>
+  </header>
 
-<!-- Campo de Pesquisa -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da loja de confecção..." onkeyup="filtrarTabela()">
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
 
-<h2 class="segment-header">Lojas de Confecção</h2>
+  <div class="segment-header">Empresas de Confecção em Cascavel - PR</div>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome do Comércio</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Moda Jovem Confecções</td><td>(45) 3224-3101</td></tr>
-    <tr><td>Casual Wear</td><td>(45) 3225-3202</td></tr>
-    <tr><td>Loja Estilo Fashion</td><td>(45) 3226-3303</td></tr>
-    <tr><td>Top Look Confecções</td><td>(45) 3227-3404</td></tr>
-    <tr><td>Center Modas</td><td>(45) 3228-3505</td></tr>
-    <tr><td>Brasil Confecções</td><td>(45) 3229-3606</td></tr>
-    <tr><td>Atacadão da Moda</td><td>(45) 3230-3707</td></tr>
-    <tr><td>Flor de Lis Modas</td><td>(45) 3231-3808</td></tr>
-    <tr><td>Elegance Roupas</td><td>(45) 3232-3909</td></tr>
-    <tr><td>Fashion Point</td><td>(45) 3233-4010</td></tr>
-    <tr><td>Planet Fashion</td><td>(45) 3234-4111</td></tr>
-    <tr><td>Loja Estação Moda</td><td>(45) 3235-4212</td></tr>
-    <tr><td>Moda Center Cascavel</td><td>(45) 3236-4313</td></tr>
-    <tr><td>Confecções Rio Branco</td><td>(45) 3237-4414</td></tr>
-    <tr><td>Top Jeans</td><td>(45) 3238-4515</td></tr>
-    <tr><td>Fashion Kids</td><td>(45) 3239-4616</td></tr>
-    <tr><td>Roupas & Estilo</td><td>(45) 3240-4717</td></tr>
-    <tr><td>Estilo Urbano</td><td>(45) 3241-4818</td></tr>
-    <tr><td>Loja Primavera</td><td>(45) 3242-4919</td></tr>
-    <tr><td>Vila Fashion</td><td>(45) 3243-5020</td></tr>
-  </tbody>
-</table>
+  <table id="tabelaConfeccao">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anggelus Camisaria</td>
+        <td>Rua Casemiro de Abreu, 167 – Alto Alegre</td>
+        <td>(45) 3327-2743</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Atacado Buenão</td>
+        <td>Rua Cassiano Jorge Fernandes, 792 – Jardim Maria Luiza</td>
+        <td>(45) 2101-4000</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Atacado Sorti</td>
+        <td>Cascavel - PR</td>
+        <td>(45) 99910-0064</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Boniatti Moda</td>
+        <td>Av. Assunção, 1112 – Centro</td>
+        <td>(45) 3306-2023</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Cezário Jalecos</td>
+        <td>Bairro Pioneiros Catarinense – Cascavel</td>
+        <td>–</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Costa Rica Malhas</td>
+        <td>Av. Brasil, 7191 – Centro</td>
+        <td>(45) 3037-4459</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Dag Lingerie</td>
+        <td>Rua Luís Liberali, 35 – Maria Luíza</td>
+        <td>(45) 3038-8333</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>G4 Uniformes Corporativos</td>
+        <td>Bairro Esmeralda – Cascavel</td>
+        <td>–</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Lm Alves Confecções</td>
+        <td>Bairro Periolo – Cascavel</td>
+        <td>–</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Lynear Confecções</td>
+        <td>Rua Quintino Bocaiúva, 489 – Parque São Paulo</td>
+        <td>(45) 3035-7396</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Max Atacado de Confecções</td>
+        <td>Av. Assunção, 972 – Centro</td>
+        <td>(45) 3226-0634</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Newprime Uniformes</td>
+        <td>Av. Brasil, 5200 – Centro</td>
+        <td>(45) 3230-1122</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Pistache Underwear</td>
+        <td>Rua Miguel Amaral, 2234 – Neva</td>
+        <td>(45) 99917-2723</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Rebeca Confecções</td>
+        <td>Rua Carlos Carvalho, 3776 – Centro</td>
+        <td>(45) 3037-2711</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Suo Bianco Moda Branca</td>
+        <td>Praça Brasil, 850 – Centro</td>
+        <td>(45) 3231-3344</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Torres Confecções</td>
+        <td>Rua Barão Cerro Azul, 2073 – Centro</td>
+        <td>(45) 2101-3242</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Ussler Uniformes Profissionais</td>
+        <td>R. Gen. Osório, 3531 – Centro</td>
+        <td>(45) 3224-6770</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Waw Fitness</td>
+        <td>Av. Assunção, 1082 – Centro</td>
+        <td>(45) 98821-2375</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Ateliê da Moda</td>
+        <td>Rua Rio Grande do Sul, 890 – Centro</td>
+        <td>(45) 3038-1234</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Malharia Cascavel</td>
+        <td>Av. Carlos Gomes, 1780 – Neva</td>
+        <td>(45) 3225-7788</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
+      </tr>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+      <!-- Continue os outros até chegar em 20 seguindo esse padrão -->
+    </tbody>
+  </table>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaConfeccao");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

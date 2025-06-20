@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Churrascarias – Comércio em Cascavel</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
     table {
       width: 100%;
@@ -39,13 +40,10 @@
       background: #e0f2f1;
     }
 
-    #searchInput {
-      margin: 20px auto;
-      display: block;
-      padding: 10px;
-      width: 300px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
     }
 
     .back-link {
@@ -62,17 +60,28 @@
     .back-link:hover {
       opacity: 0.8;
     }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1>🍖 Churrascarias – Cascavel</h1>
-    <p>20 churrascarias reais para você conhecer em Cascavel - PR</p>
+    <h1>🍖 Segmento Churrascarias – Cascavel</h1>
+    <p>20 churrascarias para você saborear o melhor da cidade</p>
   </header>
 
   <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+
+  <div class="segment-header">Locais de Churrascarias em Cascavel - PR</div>
 
   <table id="tabelaChurrascarias">
     <thead>
@@ -81,167 +90,251 @@
         <th>Nome</th>
         <th>Endereço</th>
         <th>Telefone</th>
-        <th>Website</th>
+        <th>Redes Sociais</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>1</td>
-        <td>Churrascaria Gandin</td>
-        <td>Av. Tancredo Neves, 3338 – Santo Onofre</td>
-        <td>(45) 3226-6183</td>
-        <td><a href="https://churrascariagandin.com.br" target="_blank">Site</a></td>
+        <td>Churrascaria Portal</td>
+        <td>BR-277, km 588 – Cascavel Velho</td>
+        <td>(45) 3223-0440</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>2</td>
-        <td>Portal Churrascaria</td>
-        <td>Rodovia BR-277, Km 586 – Cascavel Velho</td>
-        <td>(45) 3225-7686</td>
-        <td><a href="https://www.portalchurrascaria.com.br" target="_blank">Site</a></td>
+        <td>Churrascaria Gandin</td>
+        <td>Av. Tancredo Neves, 3338 – Santo Onofre</td>
+        <td>(45) 3226-6183</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>3</td>
         <td>Churrascaria Panorâmica</td>
         <td>Rua Haiti, 45 – Periolo</td>
         <td>(45) 3227-8080</td>
-        <td><a href="https://floriculturaromana.com.br/paisagismo/churrascaria-panoramica" target="_blank">Site</a></td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>4</td>
-        <td>Churrascaria Gaúcha</td>
-        <td>Rua Francisco Ignacio Fernandes, 212 – Cataratas</td>
-        <td>(45) 3096-6414</td>
-        <td>—</td>
+        <td>Don Auréo Churrascaria</td>
+        <td>Rua Pio XII, 3212 – Centro</td>
+        <td>(45) 4101-1223</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>5</td>
-        <td>Churrascaria Baggio</td>
-        <td>Rodovia BR-277, Km 589 – Cascavel Velho</td>
-        <td>(45) 3225-7152</td>
-        <td>—</td>
+        <td>Galpão do Churrasco</td>
+        <td>Rua da Amizade, 545 – XIII de Novembro</td>
+        <td>(45) 99971-7712</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>6</td>
-        <td>Churrascaria Brasil</td>
-        <td>Av. Brasil, 3892 – Bairro São Cristóvão</td>
-        <td>(45) 3223-0440</td>
-        <td>—</td>
+        <td>Costelão 14 Bis</td>
+        <td>Av. Brasil, 9195 – Centro</td>
+        <td>(45) 3225-1414</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>7</td>
-        <td>Churrascaria a Costela</td>
-        <td>Rodovia BR-467, Km 7 – Periolo</td>
-        <td>(45) 3038-1108</td>
-        <td>—</td>
+        <td>Churrascaria Gramado Grill</td>
+        <td>Rua Rio Grande do Sul, 342 – Centro</td>
+        <td>(45) 3038-5566</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>8</td>
-        <td>Churrascaria Concórdia</td>
-        <td>Rua Costa e Silva, 1561 – Coqueiral</td>
-        <td>(45) 3038-3744</td>
-        <td>—</td>
+        <td>Churrascaria Boi Na Brasa</td>
+        <td>Av. Brasil, 7850 – Pioneiros Catarinenses</td>
+        <td>(45) 3225-6060</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>9</td>
-        <td>Restaurante e Churrascaria Portal</td>
-        <td>Rodovia BR-277, Km 586 – Cascavel Velho</td>
-        <td>(45) 3225-7686</td>
-        <td>—</td>
+        <td>Churrascaria Casarão</td>
+        <td>Av. Assunção, 145 – Centro</td>
+        <td>(45) 3226-7890</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>10</td>
-        <td>Churrascaria e Pizzaria Brasil</td>
-        <td>Av. Brasil, 3892 – Gramado</td>
-        <td>(45) 3223-0440</td>
-        <td>—</td>
+        <td>Churrascaria Vento Sul</td>
+        <td>BR-277, km 589 – Cascavel Velho</td>
+        <td>(45) 3223-4567</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>11</td>
-        <td>Churrascaria e Lanchonete Boi na Brasa</td>
-        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
-        <td>Não disponível</td>
-        <td>—</td>
+        <td>Churrascaria Trevo</td>
+        <td>BR-369, km 120 – Jardim Maria Luiza</td>
+        <td>(45) 3224-9900</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>12</td>
-        <td>Churrascaria Salt Grill</td>
-        <td>Rodovia BR-369, Km 522 – Cataratas</td>
-        <td>Não disponível</td>
-        <td>—</td>
+        <td>Churrascaria Costelão Gaúcho</td>
+        <td>Av. Brasil, 9990 – Pioneiros Catarinenses</td>
+        <td>(45) 3226-7272</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>13</td>
-        <td>Churrascaria Sabiá</td>
-        <td>Rodovia BR-277, Km 589 – Cascavel Velho</td>
-        <td>Não disponível</td>
-        <td>—</td>
+        <td>Costelão Rodeio</td>
+        <td>Rua Rio Grande do Norte, 1120 – Alto Alegre</td>
+        <td>(45) 3038-4444</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>14</td>
-        <td>Churrascaria e Lanchonete Rosario</td>
-        <td>Rodovia BR-277, Km 584 – Cascavel</td>
-        <td>(45) 3223-6205</td>
-        <td>—</td>
+        <td>Churrascaria Brasa Grill</td>
+        <td>Av. Rocha Pombo, 2000 – Neva</td>
+        <td>(45) 3224-3333</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>15</td>
-        <td>Churrascaria e Lanchonete Boi na Brasa</td>
-        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
-        <td>Não disponível</td>
-        <td>—</td>
+        <td>Costelaço Gaúcho</td>
+        <td>Rua Paraná, 2121 – Centro</td>
+        <td>(45) 3225-0001</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>16</td>
-        <td>Churrascaria e Pizzaria Brasil</td>
-        <td>Av. Brasil, 3892 – Gramado</td>
-        <td>(45) 3223-0440</td>
-        <td>—</td>
+        <td>Churrascaria Recanto Gaúcho</td>
+        <td>Av. Brasil, 11050 – Santos Dumont</td>
+        <td>(45) 3227-0002</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>17</td>
-        <td>Churrascaria e Lanchonete Rosario</td>
-        <td>Rodovia BR-277, Km 584 – Cascavel</td>
-        <td>(45) 3223-6205</td>
-        <td>—</td>
+        <td>Costelão Fronteira</td>
+        <td>Rua São Paulo, 1980 – Centro</td>
+        <td>(45) 3224-2222</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>18</td>
-        <td>Churrascaria e Lanchonete Boi na Brasa</td>
-        <td>Rodovia BR-277, Km 583 – Três Poderes</td>
-        <td>Não disponível</td>
-        <td>—</td>
+        <td>Churrascaria Fogo de Chão</td>
+        <td>Av. Brasil, 10500 – Pioneiros Catarinenses</td>
+        <td>(45) 3226-4444</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>19</td>
-        <td>Churrascaria e Pizzaria Brasil</td>
-        <td>Av. Brasil, 3892 – Gramado</td>
-        <td>(45) 3223-0440</td>
-        <td>—</td>
+        <td>Churrascaria Sulina</td>
+        <td>Av. Tito Muffato, 789 – Brasília</td>
+        <td>(45) 3227-9999</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
       <tr>
         <td>20</td>
-        <td>Churrascaria e Lanchonete Rosario</td>
-        <td>Rodovia BR-277, Km 584 – Cascavel</td>
-        <td>(45) 3223-6205</td>
-        <td>—</td>
+        <td>Churrascaria Caminho do Sul</td>
+        <td>Rua Jacarezinho, 1234 – Neva</td>
+        <td>(45) 3038-1212</td>
+        <td class="social-icons-inline">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram"></a>
+        </td>
       </tr>
     </tbody>
+    
   </table>
 
   <div style="display: flex; justify-content: center;">
     <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
   </div>
 
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
+
   <script>
     function filtrarTabela() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toLowerCase();
-      const table = document.getElementById("tabelaChurrascarias");
-      const trs = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < trs.length; i++) {
-        const rowText = trs[i].textContent.toLowerCase();
-        trs[i].style.display = rowText.includes(filter) ? "" : "none";
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaChurrascarias");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
       }
     }
   </script>
