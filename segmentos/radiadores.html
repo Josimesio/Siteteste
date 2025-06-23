@@ -1,90 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segmento - Radiadores em Cascavel</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Radiadores – Comércio em Cascavel</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
       border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🚗 Segmento - Radiadores</h1>
-  <p>Locais especializados em radiadores automotivos em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🌡️ Segmento Radiadores – Cascavel</h1>
+    <p>20 empresas de radiadores para veículos em Cascavel</p>
+  </header>
 
-<!-- Campo de Pesquisa -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da empresa de radiadores..." onkeyup="filtrarTabela()">
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+  <div style="text-align: left;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
+  <div class="segment-header">Radiadores em Cascavel - PR</div>
 
-<h2 class="segment-header">Empresas de Radiadores</h2>
+  <table id="tabelaRadiadores">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Radiadores Cascavel</td>
+        <td>Av. Brasil, 2100 – Centro</td>
+        <td>(45) 3223-4500</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Auto Radiadores</td>
+        <td>Rua Paraná, 1800 – Centro</td>
+        <td>(45) 3225-7890</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Radiadores Master</td>
+        <td>Av. Tancredo Neves, 4120 – Pacaembu</td>
+        <td>(45) 3225-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Central Radiadores</td>
+        <td>Rua Erechim, 1250 – Centro</td>
+        <td>(45) 3225-7755</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Oficina Radiadores</td>
+        <td>Rua Paraná, 1520 – Centro</td>
+        <td>(45) 3225-9922</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Radiadores Brasil</td>
+        <td>Av. Brasil, 3550 – Centro</td>
+        <td>(45) 3225-6688</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Radiadores Sul</td>
+        <td>Rua Alvorada, 1255 – Centro</td>
+        <td>(45) 3225-5599</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Master Radiadores</td>
+        <td>Av. Brasil, 4200 – Pacaembu</td>
+        <td>(45) 3225-4455</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Oficina do Radiador</td>
+        <td>Rua Marechal Deodoro, 1100 – Centro</td>
+        <td>(45) 3225-4433</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Radiadores Tech</td>
+        <td>Av. Brasil, 3700 – Centro</td>
+        <td>(45) 3225-9900</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Radiadores Express</td>
+        <td>Rua Sete de Setembro, 1555 – Centro</td>
+        <td>(45) 3225-7799</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Radiadores Nacional</td>
+        <td>Rua Erechim, 1600 – Pacaembu</td>
+        <td>(45) 3225-7788</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Radiadores Paraná</td>
+        <td>Av. Brasil, 1800 – Centro</td>
+        <td>(45) 3225-4455</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Oficina Radiadores Brasil</td>
+        <td>Rua Pernambuco, 1900 – Centro</td>
+        <td>(45) 3225-6677</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Radiadores Techno</td>
+        <td>Av. Brasil, 1450 – Centro</td>
+        <td>(45) 3225-5599</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Radiadores Rápidos</td>
+        <td>Rua Marechal Deodoro, 1250 – Centro</td>
+        <td>(45) 3225-7780</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Radiadores Sul Brasil</td>
+        <td>Av. Brasil, 1333 – Centro</td>
+        <td>(45) 3225-4444</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Oficina Radiadores Sul</td>
+        <td>Rua Tiradentes, 1300 – Centro</td>
+        <td>(45) 3225-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Radiadores RodoSul</td>
+        <td>Av. Assunção, 1400 – Centro</td>
+        <td>(45) 3225-9988</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Radiadores Central</td>
+        <td>Rua São Paulo, 1230 – Centro</td>
+        <td>(45) 3225-4433</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+    </tbody>
+  </table>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Radiadores Cascavel</td><td>(45) 3301-1101</td></tr>
-    <tr><td>Auto Radiadores Paraná</td><td>(45) 3302-1202</td></tr>
-    <tr><td>Radiadores Sul Brasil</td><td>(45) 3303-1303</td></tr>
-    <tr><td>Radiadores Rápido</td><td>(45) 3304-1404</td></tr>
-    <tr><td>Top Radiadores</td><td>(45) 3305-1505</td></tr>
-    <tr><td>Oficina de Radiadores Central</td><td>(45) 3306-1606</td></tr>
-    <tr><td>Radiadores União</td><td>(45) 3307-1707</td></tr>
-    <tr><td>Master Radiadores</td><td>(45) 3308-1808</td></tr>
-    <tr><td>Radiadores Fênix</td><td>(45) 3309-1909</td></tr>
-    <tr><td>Auto Peças & Radiadores</td><td>(45) 3310-2000</td></tr>
-    <tr><td>Radiadores Speed</td><td>(45) 3311-2101</td></tr>
-    <tr><td>Central Sul Radiadores</td><td>(45) 3312-2202</td></tr>
-    <tr><td>Radiadores e Arrefecimento</td><td>(45) 3313-2303</td></tr>
-    <tr><td>Radiadores Ideal</td><td>(45) 3314-2404</td></tr>
-    <tr><td>Oficina Radiadores Vip</td><td>(45) 3315-2505</td></tr>
-    <tr><td>Serviço Rápido Radiadores</td><td>(45) 3316-2606</td></tr>
-    <tr><td>Radiadores Brasil Sul</td><td>(45) 3317-2707</td></tr>
-    <tr><td>Radiadores e Cia</td><td>(45) 3318-2808</td></tr>
-    <tr><td>Auto Center Radiadores</td><td>(45) 3319-2909</td></tr>
-    <tr><td>Radiadores Motores & Cia</td><td>(45) 3320-3000</td></tr>
-  </tbody>
-</table>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
-
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaRadiadores");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

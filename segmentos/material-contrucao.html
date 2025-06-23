@@ -1,90 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Segmento - Material de Construção em Cascavel</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Revendedoras de Material de Construção – Comércio em Cascavel</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
       border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🏗️ Segmento - Material de Construção</h1>
-  <p>As melhores lojas de materiais de construção em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🏗️ Segmento Revendedoras de Material de Construção – Cascavel</h1>
+    <p>20 revendedoras de material de construção para você conhecer na cidade</p>
+  </header>
 
-<!-- Campo de Pesquisa -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="🔍 Pesquise por nome da loja de materiais de construção..." onkeyup="filtrarTabela()">
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+  <div style="text-align: left;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
+  <div class="segment-header">Revendedoras de Material de Construção em Cascavel - PR</div>
 
-<h2 class="segment-header">Lojas de Material de Construção</h2>
+  <table id="tabelaRevendedorasMaterial">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Construcenter</td>
+        <td>Av. Brasil, 1580 – Centro</td>
+        <td>(45) 3225-1234</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Casa do Construtor</td>
+        <td>Rua Paraná, 2077 – Centro</td>
+        <td>(45) 3223-4567</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Material Forte</td>
+        <td>Av. das Torres, 5100 – Jardim São Paulo</td>
+        <td>(45) 3038-7890</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Constrular</td>
+        <td>Rua Almirante Barroso, 1234 – Centro</td>
+        <td>(45) 3224-5678</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Master Construção</td>
+        <td>Av. Carlos Gomes, 1980 – Neva</td>
+        <td>(45) 3225-8765</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Construmix</td>
+        <td>Rua Santos Dumont, 1780 – Centro</td>
+        <td>(45) 3222-1234</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Casa Nova Materiais</td>
+        <td>Av. Curitiba, 2500 – Jardim Universitário</td>
+        <td>(45) 3037-4567</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Construtora Cascavel</td>
+        <td>Rua João Negrão, 790 – Centro</td>
+        <td>(45) 3225-4321</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Jocar Materiais</td>
+        <td>Av. Brasil, 5555 – Pacaembu</td>
+        <td>(45) 3037-6543</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>ConstruFácil</td>
+        <td>Rua Alvorada, 345 – Centro</td>
+        <td>(45) 3225-6789</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Casa Verde Materiais</td>
+        <td>Av. Paraná, 1900 – Centro</td>
+        <td>(45) 3224-8765</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Constrular Oeste</td>
+        <td>Rua São Paulo, 860 – Centro</td>
+        <td>(45) 3225-3456</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Fortcon Construção</td>
+        <td>Av. Brasil, 2100 – Centro</td>
+        <td>(45) 3225-7890</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Construsul Materiais</td>
+        <td>Rua Floriano Peixoto, 1250 – Centro</td>
+        <td>(45) 3224-5432</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Master Construtora</td>
+        <td>Av. Mato Grosso, 800 – Jardim São Paulo</td>
+        <td>(45) 3038-6543</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Construsul Leste</td>
+        <td>Rua Tiradentes, 1450 – Centro</td>
+        <td>(45) 3225-1122</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Construfácil</td>
+        <td>Av. Curitiba, 2000 – Jardim Universitário</td>
+        <td>(45) 3224-2233</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Jardim Materiais</td>
+        <td>Rua Marechal Deodoro, 1001 – Centro</td>
+        <td>(45) 3225-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Material Sul</td>
+        <td>Av. Maringá, 4000 – Pacaembu</td>
+        <td>(45) 3037-7788</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Construcenter Oeste</td>
+        <td>Rua Sete de Setembro, 2000 – Centro</td>
+        <td>(45) 3225-9900</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+    </tbody>
+  </table>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Construcenter Cascavel</td><td>(45) 3221-1001</td></tr>
-    <tr><td>Casa do Construtor</td><td>(45) 3222-1102</td></tr>
-    <tr><td>Materiais de Construção Paraná</td><td>(45) 3223-1203</td></tr>
-    <tr><td>Loja do Pedreiro</td><td>(45) 3224-1304</td></tr>
-    <tr><td>Constrular Materiais</td><td>(45) 3225-1405</td></tr>
-    <tr><td>Cimento & Cia</td><td>(45) 3226-1506</td></tr>
-    <tr><td>Construmix</td><td>(45) 3227-1607</td></tr>
-    <tr><td>ConstruMaster</td><td>(45) 3228-1708</td></tr>
-    <tr><td>Casa Nova Materiais</td><td>(45) 3229-1809</td></tr>
-    <tr><td>Construcampo</td><td>(45) 3230-1900</td></tr>
-    <tr><td>Madeireira Cascavel</td><td>(45) 3231-2001</td></tr>
-    <tr><td>Construdecor</td><td>(45) 3232-2102</td></tr>
-    <tr><td>Materiais Boa Vista</td><td>(45) 3233-2203</td></tr>
-    <tr><td>Central da Construção</td><td>(45) 3234-2304</td></tr>
-    <tr><td>Construtora Norte</td><td>(45) 3235-2405</td></tr>
-    <tr><td>Construção Total</td><td>(45) 3236-2506</td></tr>
-    <tr><td>ConstruReis</td><td>(45) 3237-2607</td></tr>
-    <tr><td>Construcascavel</td><td>(45) 3238-2708</td></tr>
-    <tr><td>Construfácil</td><td>(45) 3239-2809</td></tr>
-    <tr><td>Top Materiais de Construção</td><td>(45) 3240-2900</td></tr>
-  </tbody>
-</table>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
-
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaRevendedorasMaterial");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

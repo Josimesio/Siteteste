@@ -1,117 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Segmento - Eletrônica em Cascavel</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Eletrônica – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
-    .search-box {
-      text-align: center;
-      margin: 20px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
     table {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      width: 100%;
       border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
       text-align: left;
+      font-size: 1.1rem;
     }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
     tr:hover {
-      background-color: #f1f1f1;
+      background: #e0f2f1;
     }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
     .back-link {
-      display: block;
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
       text-decoration: none;
-      color: #0072ff;
-      font-weight: bold;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🔌 Segmento - Eletrônica</h1>
-  <p>Lojas e assistência técnica de eletrônicos em Cascavel - PR</p>
-</header>
+  <header>
+    <h1>🔌 Segmento Eletrônica – Cascavel</h1>
+    <p>20 empresas de eletrônica para você conhecer na cidade</p>
+  </header>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔍 Pesquise por nome da loja..."
-    onkeyup="filtrarTabela()"
-  />
-</div>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+  <div style="text-align: left;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
+  <div class="segment-header">Empresas de Eletrônica em Cascavel - PR</div>
 
-<h2 class="segment-header">Lojas de Eletrônica em Cascavel</h2>
+  <table id="tabelaEletronica">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Casa das Antenas</td>
+        <td>Av. Brasil, 3645 – Centro</td>
+        <td>(45) 3223-1678</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Agromix Eletrônica</td>
+        <td>Av. Brasil, 6851 – Centro</td>
+        <td>(45) 3038-1858</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Eletrônica São José</td>
+        <td>Rua Souza Naves, 1815 – Centro</td>
+        <td>(45) 3225-2352</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Oficina do Rádio</td>
+        <td>Rua Paraná, 2858 – Centro</td>
+        <td>(45) 3224-3788</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Eletrônica Cascavel</td>
+        <td>Av. Tancredo Neves, 4555 – Pacaembu</td>
+        <td>(45) 3225-2343</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Ideal Eletrônica</td>
+        <td>Rua Pernambuco, 2630 – Centro</td>
+        <td>(45) 3225-1204</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Eletrônica Maxxi</td>
+        <td>Rua Maranhão, 1040 – Centro</td>
+        <td>(45) 3223-3030</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Conserta Smart Cascavel</td>
+        <td>Av. Brasil, 3531 – Centro</td>
+        <td>(45) 99917-2703</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Casco Eletrônica</td>
+        <td>Rua São Paulo, 1448 – Centro</td>
+        <td>(45) 3225-7750</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Solar Eletrônica</td>
+        <td>Rua Pernambuco, 2701 – Centro</td>
+        <td>(45) 3225-1355</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Eletrônica Dama</td>
+        <td>Rua Maranhão, 1283 – Centro</td>
+        <td>(45) 3225-4397</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Eletrônica Ideal Sat</td>
+        <td>Rua Paraná, 1841 – Centro</td>
+        <td>(45) 3038-0666</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Eletrônica Master TV</td>
+        <td>Rua Castro Alves, 1550 – Centro</td>
+        <td>(45) 3225-2877</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Eletrônica Litoral</td>
+        <td>Rua Paraná, 3065 – Centro</td>
+        <td>(45) 3225-2184</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Tech Conserta</td>
+        <td>Rua Pernambuco, 2560 – Centro</td>
+        <td>(45) 99910-0467</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Eletrônica Rádiosat</td>
+        <td>Av. Brasil, 3500 – Centro</td>
+        <td>(45) 3225-3436</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Multitelecom Assistência</td>
+        <td>Rua Sete de Setembro, 1873 – Centro</td>
+        <td>(45) 3225-2547</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Central Assistência Técnica</td>
+        <td>Rua Paraná, 3068 – Centro</td>
+        <td>(45) 3038-4150</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Nova TV Eletrônica</td>
+        <td>Rua Erechim, 221 – Pacaembu</td>
+        <td>(45) 3225-6746</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>RS Assistência Técnica</td>
+        <td>Av. Assunção, 380 – Centro</td>
+        <td>(45) 3225-2430</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+    </tbody>
+  </table>
 
-<table id="comercioTable">
-  <thead>
-    <tr>
-      <th>Nome da Empresa</th>
-      <th>Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Eletrônica Cascavel</td><td>(45) 3344-1100</td></tr>
-    <tr><td>Tech Eletrônicos</td><td>(45) 3344-1120</td></tr>
-    <tr><td>Loja Circuito</td><td>(45) 3344-1130</td></tr>
-    <tr><td>Eletrônicos Silva</td><td>(45) 3344-1140</td></tr>
-    <tr><td>Assistência Técnica Plus</td><td>(45) 3344-1150</td></tr>
-    <tr><td>TechCenter Eletrônica</td><td>(45) 3344-1160</td></tr>
-    <tr><td>Eletrônica Digital</td><td>(45) 3344-1170</td></tr>
-    <tr><td>Loja Circuito Rápido</td><td>(45) 3344-1180</td></tr>
-    <tr><td>Eletrônica Nacional</td><td>(45) 3344-1190</td></tr>
-    <tr><td>Electro Shop</td><td>(45) 3344-1200</td></tr>
-    <tr><td>Eletrônica Brasil</td><td>(45) 3344-1210</td></tr>
-    <tr><td>Loja Eletrônica Top</td><td>(45) 3344-1220</td></tr>
-    <tr><td>Assistência Circuito</td><td>(45) 3344-1230</td></tr>
-    <tr><td>Tech Plus Eletrônica</td><td>(45) 3344-1240</td></tr>
-    <tr><td>Loja Eletrônica Central</td><td>(45) 3344-1250</td></tr>
-    <tr><td>Eletrônica Express</td><td>(45) 3344-1260</td></tr>
-    <tr><td>Assistência Técnica Cascavel</td><td>(45) 3344-1270</td></tr>
-    <tr><td>Eletrônica Moderna</td><td>(45) 3344-1280</td></tr>
-    <tr><td>Loja Eletrônica Total</td><td>(45) 3344-1290</td></tr>
-    <tr><td>TechStore Eletrônica</td><td>(45) 3344-1300</td></tr>
-  </tbody>
-</table>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
-<a class="back-link" href="../index.html">⬅️ Voltar para a página inicial</a>
+  <footer>
+    <p>&copy; 2025 - Comércio de Cascavel</p>
+  </footer>
 
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido por Josimesio.
-</footer>
-
-<script>
-  function filtrarTabela() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('comercioTable');
-    const trs = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < trs.length; i++) {
-      const tds = trs[i].getElementsByTagName('td');
-      const nome = tds[0]?.textContent.toLowerCase() || '';
-      trs[i].style.display = nome.includes(filter) ? '' : 'none';
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaEletronica");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

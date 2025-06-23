@@ -1,52 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Saúde – Comércio em Cascavel</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      background: #004d40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #e0f2f1;
+    }
+
+    .social-icons-inline img {
+      width: 20px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      background: #004d40;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity .3s;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    #searchInput {
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
     <h1>🏥 Segmento Saúde – Cascavel</h1>
-    <p>20 serviços de saúde, clínicas e farmácias</p>
+    <p>20 empresas da área de saúde para você conhecer em Cascavel</p>
   </header>
 
-  <div class="segment-header">Clínicas, Laboratórios, Farmácias</div>
-  <table>
+  <input type="text" id="searchInput" onkeyup="filtrarTabela()" placeholder="🔍 Pesquise na tabela...">
+  <div style="text-align: left;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
+  <div class="segment-header">Empresas de Saúde em Cascavel - PR</div>
+
+  <table id="tabelaSaude">
     <thead>
       <tr>
-        <th>#</th><th>Nome</th><th>Endereço</th><th>Telefone</th>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>Redes Sociais</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>1</td><td>Hospital São Lucas</td><td>Av. Brasil, 3200</td><td>(45) 3021-3131</td></tr>
-      <tr><td>2</td><td>Laboratório Diagnósticos Cascavel</td><td>Rua Paraná, 1100</td><td>(45) 3022-4242</td></tr>
-      <tr><td>3</td><td>Clínica Vida Saudável</td><td>Rua Souza Naves, 900</td><td>(45) 3023-5353</td></tr>
-      <tr><td>4</td><td>Farmácia Brasil</td><td>Av. Tancredo Neves, 1000</td><td>(45) 3024-6464</td></tr>
-      <tr><td>5</td><td>OdontoTop Cascavel</td><td>Rua Rio de Janeiro, 1900</td><td>(45) 3025-7575</td></tr>
-      <tr><td>6</td><td>Clínica Ortopédica Cascavel</td><td>Rua Paraná, 2500</td><td>(45) 3026-8686</td></tr>
-      <tr><td>7</td><td>Farmácia Econômica</td><td>Av. Brasil, 4300</td><td>(45) 3027-9797</td></tr>
-      <tr><td>8</td><td>Clínica Popular Saúde+</td><td>Rua Rio Grande do Sul, 800</td><td>(45) 3028-0808</td></tr>
-      <tr><td>9</td><td>Laboratório Central</td><td>Av. Tancredo Neves, 1800</td><td>(45) 3029-1919</td></tr>
-      <tr><td>10</td><td>Hospital Santa Catarina</td><td>Rua Ponta Grossa, 350</td><td>(45) 3030-2020</td></tr>
-      <tr><td>11</td><td>Farmácia Drogamais</td><td>Av. Brasil, 5100</td><td>(45) 3031-3131</td></tr>
-      <tr><td>12</td><td>Laboratório BioVida</td><td>Rua Paraná, 1900</td><td>(45) 3032-4242</td></tr>
-      <tr><td>13</td><td>Clínica do Coração</td><td>Rua Souza Naves, 1300</td><td>(45) 3033-5353</td></tr>
-      <tr><td>14</td><td>Farmácia Popular</td><td>Av. Tancredo Neves, 2400</td><td>(45) 3034-6464</td></tr>
-      <tr><td>15</td><td>Odontologia Sorriso</td><td>Rua Rio de Janeiro, 2100</td><td>(45) 3035-7575</td></tr>
-      <tr><td>16</td><td>Clínica Oftalmo Center</td><td>Rua Paraná, 1700</td><td>(45) 3036-8686</td></tr>
-      <tr><td>17</td><td>Farmácia Vida</td><td>Av. Brasil, 5500</td><td>(45) 3037-9797</td></tr>
-      <tr><td>18</td><td>Centro de Vacinação</td><td>Rua Rio Grande do Sul, 950</td><td>(45) 3038-0808</td></tr>
-      <tr><td>19</td><td>Hospital Infantil</td><td>Av. Tancredo Neves, 2000</td><td>(45) 3039-1919</td></tr>
-      <tr><td>20</td><td>Clínica Médica Alpha</td><td>Rua Pio XII, 500</td><td>(45) 3040-2020</td></tr>
+      <tr>
+        <td>1</td>
+        <td>Hospital Universitário do Oeste do Paraná</td>
+        <td>Av. Paraná, 3050 – Cascavel</td>
+        <td>(45) 3901-2000</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Laboratório São Lucas</td>
+        <td>Rua Pernambuco, 1245 – Centro</td>
+        <td>(45) 3225-4590</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Clínica Médica São Camilo</td>
+        <td>Av. Brasil, 2200 – Centro</td>
+        <td>(45) 3225-1122</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Farmácia Popular</td>
+        <td>Rua Erechim, 900 – Centro</td>
+        <td>(45) 3225-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Clínica Vida</td>
+        <td>Av. Tancredo Neves, 4100 – Pacaembu</td>
+        <td>(45) 3225-4455</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Hospital de Olhos Cascavel</td>
+        <td>Rua Paraná, 850 – Centro</td>
+        <td>(45) 3225-5599</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Laboratório LAC</td>
+        <td>Av. Brasil, 1500 – Centro</td>
+        <td>(45) 3225-6677</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Farmácia Panvel</td>
+        <td>Rua Souza Naves, 1350 – Centro</td>
+        <td>(45) 3225-7788</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Clínica Odontológica Sorriso</td>
+        <td>Rua Erechim, 1450 – Centro</td>
+        <td>(45) 3225-9900</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Hospital do Câncer de Cascavel</td>
+        <td>Av. Brasil, 2500 – Centro</td>
+        <td>(45) 3901-2200</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Clínica Bem Estar</td>
+        <td>Rua Marechal Deodoro, 1200 – Centro</td>
+        <td>(45) 3225-4433</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Farmácia São João</td>
+        <td>Av. Paraná, 800 – Centro</td>
+        <td>(45) 3225-5566</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Clínica Popular</td>
+        <td>Rua Souza Naves, 1150 – Centro</td>
+        <td>(45) 3225-7780</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Hospital São Lucas</td>
+        <td>Av. Brasil, 2000 – Centro</td>
+        <td>(45) 3225-6677</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Laboratório Central</td>
+        <td>Rua Erechim, 900 – Centro</td>
+        <td>(45) 3225-8899</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Clínica Médica Vida Nova</td>
+        <td>Av. Tancredo Neves, 3000 – Pacaembu</td>
+        <td>(45) 3225-5566</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Farmácia Droga Raia</td>
+        <td>Rua Paraná, 1150 – Centro</td>
+        <td>(45) 3225-7766</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Clínica Saúde Total</td>
+        <td>Av. Brasil, 3500 – Centro</td>
+        <td>(45) 3225-6655</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Hospital da Mulher</td>
+        <td>Rua São Paulo, 1400 – Centro</td>
+        <td>(45) 3225-3344</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Clínica Vida e Saúde</td>
+        <td>Av. Paraná, 1400 – Centro</td>
+        <td>(45) 3225-5566</td>
+        <td class="social-icons-inline"><a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+              alt="WhatsApp"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+              alt="Facebook"></a> <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+              alt="Instagram"></a></td>
+      </tr>
     </tbody>
   </table>
 
-  <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  <div style="display: flex; justify-content: center;">
+    <a class="back-link" href="../index.html">⬅️ Voltar para os Segmentos</a>
+  </div>
 
   <footer>
     <p>&copy; 2025 - Comércio de Cascavel</p>
   </footer>
+
+  <script>
+    function filtrarTabela() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("tabelaSaude");
+      var tr = table.getElementsByTagName("tr");
+      for (var i = 1; i < tr.length; i++) {
+        var txt = tr[i].textContent.toLowerCase();
+        tr[i].style.display = txt.indexOf(filter) > -1 ? "" : "none";
+      }
+    }
+  </script>
+
 </body>
+
 </html>

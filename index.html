@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Comércio de Cascavel - Portal de Segmentos</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -12,195 +12,326 @@
       background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: #fff;
     }
+
+    /* Banners topo */
+    .banners {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 10px;
+      background: rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .banner {
+      flex: 1 1 300px;
+      max-width: 600px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      background: #222;
+    }
+
+    .banner:hover {
+      transform: scale(1.05);
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
     header {
       text-align: center;
       padding: 40px 20px;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(5px);
     }
+
     h1 {
       font-size: 3em;
       text-shadow: 2px 2px 5px #000;
       animation: fadeIn 2s ease-out;
+      margin: 0;
     }
+
     p {
       font-size: 1.3em;
       opacity: 0.9;
+      margin: 0;
     }
+
     .segments {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 30px;
+      padding: 30px 20px 40px 20px;
     }
+
     .segment-card {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, background 0.3s;
       cursor: pointer;
       text-decoration: none;
       color: #fff;
       user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 140px;
     }
+
     .segment-card:hover {
       transform: translateY(-10px);
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
+
     .segment-card h2 {
       margin: 0 0 10px;
       font-size: 1.5em;
     }
+
     .segment-card p {
       font-size: 1em;
       color: #ddd;
+      margin: 0;
+      flex-grow: 1;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.3);
       margin-top: 30px;
+      color: #eee;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .banners {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .banner {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>🌟 Comércio de Cascavel</h1>
-  <p>Explore os principais segmentos comerciais da cidade!</p>
-</header>
+  <!-- BANNERS INÍCIO -->
+  <section class="banners">
+    <div class="banner">
+      <img src="https://i.imgur.com/dVJdNn7.jpg" alt="Anuncie Aqui - Banner 1">
+    </div>
+    <div class="banner">
+      <img src="https://i.imgur.com/dVJdNn7.jpg" alt="Anuncie Aqui - Banner 2">
+    </div>
+  </section>
 
-<section class="segments">
+  <!-- HEADER PRINCIPAL -->
+  <header>
+    <section class="segments">
+      <a class="segment-card alert-card" href="https://www.saude.pr.gov.br/Pagina/Doacao-de-Sangue" target="_blank"
+        style="max-width: 300px; margin: auto;">
+        <h2>🩸 Doe Sangue</h2>
+        <p><strong>Salve vidas!</strong> Procure o hemocentro mais próximo.</p>
+        <p><strong>Fone:</strong> (45) 3226-4549</p>
+        <p><strong>Endereço:</strong><br>
+          Rua Avaetés, 370<br>
+          Bairro Santo Onofre - Cascavel-PR<br>
+          CEP: 85806-380 - Brasil
+        </p>
+        <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 8h às 17h</p>
+      </a>
 
-  <a class="segment-card" href="segmentos/moda.html">
-    <h2>👗 Moda</h2>
-    <p>Roupas, acessórios e mais</p>
-  </a>
+      <h1>🌟 Comércio de Cascavel</h1>
+      <a class="segment-card alert-card" href="https://www.instagram.com/hemocentro_cascavel/" target="_blank"
+        rel="noopener noreferrer" style="max-width: 300px; margin: auto; display: block;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"
+          alt="Instagram Hemocentro Cascavel" style="width: 100%; height: auto; border-radius: 8px;">
+        <div
+          style="padding: 8px; background: rgba(0,0,0,0.5); color: #fff; text-align: center; font-size: 1em; border-radius: 0 0 8px 8px;">
+          👉 Siga no Instagram o Hemocentro
+        </div>
 
-  <a class="segment-card" href="segmentos/automotivo.html">
-    <h2>🚗 Automotivo</h2>
-    <p>Oficinas, peças e serviços</p>
-  </a>
+      </a>
 
-  <a class="segment-card" href="segmentos/saude.html">
-    <h2>🏥 Saúde</h2>
-    <p>Clínicas, hospitais e farmácias</p>
-  </a>
+      <a class="segment-card"
+        href="https://plumaagrobr.sharepoint.com/:u:/s/ProjetoConecta/EZvAEuDZjgNNnTDHtX6vgDsBgHAtOhR7h4EEUYZ4DBWqwQ?e=H6Wudd"
+        target="_blank" rel="noopener noreferrer">
+        <h2>📂 Documento Projeto Conecta</h2>
+        <p>Acesse aqui o arquivo hospedado no SharePoint.</p>
+      </a>
 
-  <a class="segment-card" href="segmentos/alimentacao.html">
-    <h2>🍔 Alimentação</h2>
-    <p>Restaurantes e lanchonetes</p>
-  </a>
+      </a>
 
-  <a class="segment-card" href="segmentos/construcao.html">
-    <h2>🛠️ Construção</h2>
-    <p>Materiais, lojas e serviços</p>
-  </a>
 
-  <a class="segment-card" href="segmentos/beleza.html">
-    <h2>💇‍♂️ Beleza</h2>
-    <p>Salões e estética</p>
-  </a>
+      </a>
+    </section>
 
-  <!-- Novos segmentos -->
+    <p>Explore os principais segmentos comerciais da cidade!</p>
+  </header>
 
-  <a class="segment-card" href="segmentos/pneus.html">
-    <h2>🛞 Pneus</h2>
-    <p>Troca e reparos</p>
-  </a>
+  <!-- LISTA DE SEGMENTOS -->
+  <section class="segments">
+    <a class="segment-card" href="segmentos/agropecuaria.html">
+      <h2>🌾 Agropecuária</h2>
+      <p>Produtos rurais e serviços</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/alimentacao.html">
+      <h2>🍔 Alimentação</h2>
+      <p>Restaurantes e lanchonetes</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/auto-eletrica.html">
+      <h2>⚡ Auto Elétrica</h2>
+      <p>Manutenção elétrica veicular</p>
+    </a>
+    <a class="segment-card" href="segmentos/beleza.html">
+      <h2>💇‍♂️ Beleza</h2>
+      <p>Salões e estética</p>
+    </a>
+    <a class="segment-card" href="segmentos/bicicletaria.html">
+      <h2>🚲 Bicicletaria</h2>
+      <p>Venda e reparos</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/casa-noturna.html">
+      <h2>🎉 Casa Noturna</h2>
+      <p>Bares e baladas</p>
+    </a>
+    <a class="segment-card" href="segmentos/certificado-digital.html">
+      <h2>🔒 Certificado Digital</h2>
+      <p>Segurança digital</p>
+    </a>
+    <a class="segment-card" href="segmentos/churrascaria.html">
+      <h2>🍖 Churrascaria</h2>
+      <p>Especialidades em carnes</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/confeccao.html">
+      <h2>🧵 Confecção</h2>
+      <p>Fábricas e varejo</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/construcao.html">
+      <h2>🛠️ Construção</h2>
+      <p>Materiais e serviços</p>
+    </a>
+    <a class="segment-card" href="segmentos/eletronica.html">
+      <h2>📺 Eletrônica</h2>
+      <p>Reparo e venda</p>
+    </a>
+    <a class="segment-card" href="segmentos/farmacia.html">
+      <h2>💊 Farmácia</h2>
+      <p>Medicamentos e cuidados</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/garagem-carro.html">
+      <h2>🚘 Garagem Carro</h2>
+      <p>Estacionamento e serviços</p>
+    </a>
+    <a class="segment-card" href="segmentos/moda.html">
+      <h2>👗 Moda</h2>
+      <p>Roupas e acessórios</p>
+    </a>
 
-  <a class="segment-card" href="segmentos/farmacia.html">
-    <h2>💊 Farmácia</h2>
-    <p>Medicamentos e cuidados</p>
-  </a>
+    <a class="segment-card" href="segmentos/moveis.html">
+      <h2>🛋️ Móveis</h2>
+      <p>Loja e fabricação</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/oficina-motos.html">
+      <h2>🏍️ Oficina Motos</h2>
+      <p>Reparo de motos</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/pets.html">
+      <h2>🐾 Pets</h2>
+      <p>Cuidados e produtos</p>
+    </a>
+    <a class="segment-card" href="segmentos/pneus.html">
+      <h2>🛞 Pneus</h2>
+      <p>Troca e manutenção</p>
+    </a>
+    <a class="segment-card" href="segmentos/radiadores.html">
+      <h2>❄️ Radiadores</h2>
+      <p>Serviços especializados</p>
+    </a>
+    <a class="segment-card" href="https://wa.me/seu_numero_ou_formulario">
+      <h2>📢 Divulgue Aqui</h2>
+      <p>Seu anúncio pode estar neste espaço!</p>
+    </a>
+    <a class="segment-card" href="segmentos/telefone.html">
+      <h2>📱 Telefone</h2>
+      <p>Venda e assistência</p>
+    </a>
+  </section>
 
-  <a class="segment-card" href="segmentos/confeccao.html">
-    <h2>🧵 Confecção</h2>
-    <p>Fábricas e varejo</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/moveis.html">
-    <h2>🛋️ Móveis</h2>
-    <p>Loja e fabricação</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/oficina-motos.html">
-    <h2>🏍️ Oficina Motos</h2>
-    <p>Reparo e manutenção</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/radiadores.html">
-    <h2>❄️ Radiadores</h2>
-    <p>Serviços especializados</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/auto-eletrica.html">
-    <h2>⚡ Auto Elétrica</h2>
-    <p>Manutenção elétrica veicular</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/telefone.html">
-    <h2>📱 Telefone</h2>
-    <p>Venda e assistência</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/certificado-digital.html">
-    <h2>🔒 Empresa Certificado Digital</h2>
-    <p>Segurança digital</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/agropecuaria.html">
-    <h2>🌾 Agropecuária</h2>
-    <p>Produtos rurais e serviços</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/pets.html">
-    <h2>🐾 Pets</h2>
-    <p>Cuidados e produtos</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/material-construcao.html">
-    <h2>🏗️ Material Construção</h2>
-    <p>Ferramentas e insumos</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/bicicletaria.html">
-    <h2>🚲 Bicicletaria</h2>
-    <p>Venda e reparos</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/garagem-carro.html">
-    <h2>🚘 Garagem Carro</h2>
-    <p>Estacionamento e serviços</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/eletronica.html">
-    <h2>📺 Eletrônica</h2>
-    <p>Reparo e venda de equipamentos</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/casa-noturna.html">
-    <h2>🎉 Casa Noturna</h2>
-    <p>Bares e baladas</p>
-  </a>
-
-  <a class="segment-card" href="segmentos/churrascaria.html">
-    <h2>🍖 Churrascaria</h2>
-    <p>Especialidades em carnes</p>
-  </a>
-
-</section>
-
-<footer>
-  &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido com ❤️ por Josimesio.
-</footer>
+  <!-- FOOTER + CONTADOR -->
+  <footer>
+    &copy; 2025 – Portal Comércio de Cascavel. Desenvolvido com ❤️ por Josimesio.<br>
+    <div id="sfc71fhlj87yug776gpxbbf8nhat32a4up3"></div>
+    <script type="text/javascript"
+      src="https://counter1.optistats.ovh/private/counter.js?c=71fhlj87yug776gpxbbf8nhat32a4up3&down=async"
+      async></script>
+    <noscript>
+      <a href="https://www.freecounterstat.com" title="contador de visitas">
+        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=71fhlj87yug776gpxbbf8nhat32a4up3"
+          border="0" alt="contador de visitas">
+      </a>
+    </noscript>
+  </footer>
 
 </body>
+
 </html>
